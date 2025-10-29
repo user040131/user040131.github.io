@@ -54,7 +54,7 @@ export default function HomePage() {
             </div>
           </p>
         </SectionBox>
-        <section className="mx-auto w-full max-w-5xl px-4 pt-10 pb-8">
+        <section id="projects" className="mx-auto w-full max-w-5xl px-4 pt-10 pb-8">
           {/* 타이틀 */}
           <h2 className="col-span-full text-center my-6 text-6xl md:text-5xl font-extrabold text-gray-900">
             Projects &amp; Technical Skills
@@ -267,13 +267,13 @@ export default function HomePage() {
         <section>
           <div>
             <h2 className="md:text-xl">2024</h2>
-            <ol>
+            <ol className="list-disc pl-8">
               <li>2024년도 1학기, c언어 자습으로 프로그래밍 입문</li>
               <li>2024년도 여름방학, SQLD 자격증 취득</li>
               <li>2024년도 2학기, 컴퓨터공학과로 전과</li>
             </ol>
             <h2 className="md:text-xl">2025</h2>
-            <ol>
+            <ol className="list-disc pl-8">
               <li>2025년도 1학기부터 2학기까지 휴학 시작</li>
               <li>가천대학교 교내 동아리 codein 참여</li>
               <li>codein 내에서 진행하는 해커톤 참여, 1등상 수상</li>
@@ -287,7 +287,6 @@ export default function HomePage() {
                 현재 Leets에서 springboot, UMC에서 node.js 학습 및 솔로
                 프로젝트로 해당 웹사이트 제작 중
               </li>
-              <li></li>
             </ol>
           </div>
         </section>
