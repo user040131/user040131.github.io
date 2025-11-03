@@ -132,7 +132,9 @@ export default function HomePage() {
           </div>
         </div>
         <div className="flex justify-start items-center gap-3">
-          <SectionBox className="h-full w-full shadow-lg shadow-blue-400/70"> {/*프론트*/}
+          <SectionBox className="h-full w-full shadow-lg shadow-blue-400/70">
+            {" "}
+            {/*프론트*/}
             <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-blue-300/70">
               <span className="font-mono text-xl text-gray-800">
                 <p className="text-blue-900">&lt;/&gt;</p>
@@ -145,7 +147,9 @@ export default function HomePage() {
             <Badge label="React" className="bg-blue-400" />
             <Badge label="Tailwind CSS" className="bg-blue-400" />
           </SectionBox>
-          <SectionBox className="h-full w-full shadow-lg shadow-green-400/70"> {/*백*/}
+          <SectionBox className="h-full w-full shadow-lg shadow-green-400/70">
+            {" "}
+            {/*백*/}
             <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-green-300/70">
               <span className="font-mono text-xl text-gray-800">&lt;/&gt;</span>
             </div>
@@ -156,15 +160,15 @@ export default function HomePage() {
             <Badge label="Express" className="bg-green-500/80" />
             <Badge label="Spring Boot" className="bg-green-500/80" />
           </SectionBox>
-          <SectionBox className="h-full w-full shadow-lg shadow-purple-400/70"> {/*db*/}
-            <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-purple-300/70">
-
-            </div>
+          <SectionBox className="h-full w-full shadow-lg shadow-purple-400/70">
+            {" "}
+            {/*db*/}
+            <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-purple-300/70"></div>
           </SectionBox>
-          <SectionBox className="h-full w-full shadow-lg shadow-orange-400/70"> {/*tech*/}
-            <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-orange-300/70">
-              
-            </div>
+          <SectionBox className="h-full w-full shadow-lg shadow-orange-400/70">
+            {" "}
+            {/*tech*/}
+            <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-orange-300/70"></div>
           </SectionBox>
         </div>
       </section>
