@@ -219,7 +219,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold text-gray-900">
               Latest Blog Posts
             </h2>
-            <a href="/blog">
+            <a href="https://velog.io/@user040131/posts">
               <button className="group inline-flex items-center gap-1 text-sm font-medium shadow-lg p-2 rounded-xl mr-3 hover:text-blue-800">
                 <span>View All</span>
                 <span className="transition-transform duration-150 group-hover:translate-x-0.5">
