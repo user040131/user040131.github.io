@@ -1,12 +1,14 @@
 // 1. next/navigation의 useRouter로 JS/TS식 라우팅 활용
-"use client";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
 import Badge from "./components/Badge";
 import SectionBox from "./components/SectionBoxbg";
+import Link from "next/link";
+import { fetchVelogPosts, VelogPost } from "@/lib/velog";
 
-export default function HomePage() {
-  const router = useRouter();
+export const revalidate = 3600; // 1 hour
+
+export default async function HomePage() {
+  const velogPosts: VelogPost[] = await fetchVelogPosts(2);
+  const [latest, second] = velogPosts;
 
   return (
     <>
@@ -71,10 +73,8 @@ export default function HomePage() {
                 Backend
               </div>
               <div className="flex flex-wrap gap-2">
-                <Badge label="Java" />
-                <Badge label="JavaScript" />
-                <Badge label="Spring Boot" />
-                <Badge label="Node.js" />
+                <Badge label="Java - SpringBoot" />
+                <Badge label="JS - Node.js / Express" />
               </div>
             </div>
 
@@ -87,8 +87,7 @@ export default function HomePage() {
                 <Badge label="HTML" />
                 <Badge label="Tailwind CSS" />
                 <Badge label="JavaScript" />
-                <Badge label="React" />
-                <Badge label="Next.js" />
+                <Badge label="React - Next.js" />
               </div>
             </div>
 
@@ -101,6 +100,7 @@ export default function HomePage() {
                 <Badge label="Git" />
                 <Badge label="Postman" />
                 <Badge label="MySQL" />
+                <Badge label="Swagger" />
               </div>
             </div>
 
@@ -123,7 +123,7 @@ export default function HomePage() {
       </section>
       <section>
         <div className="mt-12 mb-12">
-          {/* 최신으로 포스팅된 2개의 블로그 크롤링 */}
+          {/* 최신으로 포스팅된 2개의 블로그 크롤링은 어려워 */}
           <div className="flex items-center justify-center mb-2">
             <h2 className="text-4xl font-bold text-gray-900">What I Can Do</h2>
           </div>
@@ -229,22 +229,40 @@ export default function HomePage() {
             </a>
           </div>
         </div>
-        <div className="flex justify-start items-center gap-3">
-          <SectionBox className="h-full w-full bg-white shadow-lg">
-            <h1 className="font-bold">Blog Post Title 1</h1>
-            <p> 어쩌고 저쩌고 설명 </p>
-            <div className="flex flex-wrap gap-2 pt-1">
-              <Badge label="블로그 태그 1" className="bg-green-500/80" />
-              <Badge label="블로그 태그 2" className="bg-green-500/80" />
-            </div>
+        <div className="flex gap-3">
+          <SectionBox className="flex-1 bg-white shadow-lg">
+            <a
+              href={latest.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block h-full"
+            >
+              <h1 className="font-bold">{latest.title}</h1>
+              <p className="text-xs text-neutral-500">
+                {new Date(latest.pubDate).toLocaleString("ko-KR")}
+              </p>
+              <div className="flex flex-wrap gap-2 pt-1">
+                <Badge label="Springboot" className="bg-green-500/80" />
+              </div>
+            </a>
           </SectionBox>
-          <SectionBox className="h-full w-full bg-white shadow-lg">
-            <h1 className="font-bold">Blog Post Title 2</h1>
-            <p> 어쩌고 저쩌고 설명 </p>
-            <div className="flex flex-wrap gap-2 pt-1">
-              <Badge label="블로그 태그 3" className="bg-green-500/80" />
-              <Badge label="블로그 태그 4" className="bg-green-500/80" />
-            </div>
+
+          <SectionBox className="flex-1 bg-white shadow-lg">
+            <a
+              href={second.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block h-full"
+            >
+              <h1 className="font-bold">{second.title}</h1>
+              <p className="text-xs text-neutral-500">
+                {new Date(second.pubDate).toLocaleString("ko-KR")}
+              </p>
+              <div className="flex flex-wrap gap-2 pt-1">
+                <Badge label="Springboot" className="bg-green-500/80" />
+                <Badge label="Stackers" className="bg-green-500/80" />
+              </div>
+            </a>
           </SectionBox>
         </div>
       </section>
