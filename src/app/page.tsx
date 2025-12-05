@@ -47,6 +47,7 @@ export default async function HomePage() {
             </a>
             <a
               className="ml-4 shadow-lg rounded-xl p-2" /* 내 이메일로 입력되는 이메일 그걸로 넘어가기 */
+              href="mailto:seungjub270@gmail.com"
             >
               Contact
             </a>
