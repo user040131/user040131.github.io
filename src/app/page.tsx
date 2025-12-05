@@ -3,12 +3,21 @@ import Badge from "./components/Badge";
 import SectionBox from "./components/SectionBoxbg";
 import Link from "next/link";
 import { fetchVelogPosts, VelogPost } from "@/lib/velog";
+import { PROJECT_DESCRIPTIONS } from "@/content/projects";
+import Logo from "./components/Image";
+
+type ProjectCardProps = {
+  projectId: "Roommate_Sum" | "myOwnPage_Sum";
+  title: string;
+};
 
 export const revalidate = 3600; // 1 hour
 
 export default async function HomePage() {
   const velogPosts: VelogPost[] = await fetchVelogPosts(2);
   const [latest, second] = velogPosts;
+  const roommateDesc = PROJECT_DESCRIPTIONS["Roommate_Sum"];
+  const myOwnPageDesc = PROJECT_DESCRIPTIONS["myOwnPage_Sum"];
 
   return (
     <>
@@ -121,9 +130,10 @@ export default async function HomePage() {
           </aside>
         </div>
       </section>
+
+      {/* What I Can Do */}
       <section>
         <div className="mt-12 mb-12">
-          {/* 최신으로 포스팅된 2개의 블로그 크롤링은 어려워 */}
           <div className="flex items-center justify-center mb-2">
             <h2 className="text-4xl font-bold text-gray-900">What I Can Do</h2>
           </div>
@@ -131,14 +141,17 @@ export default async function HomePage() {
             <p>Comprehensive skills across the development stack</p>
           </div>
         </div>
-        <div className="flex justify-start items-center gap-3">
-          <SectionBox className="h-full w-full shadow-lg shadow-blue-400/70">
-            {" "}
+        {/* 가로 4개 카드: 폭 균등 + 높이 동일 */}
+        <div className="flex gap-3 items-stretch">
+          <SectionBox className="flex-1 shadow-lg shadow-blue-400/70">
             {/*프론트*/}
             <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-blue-300/70">
-              <span className="font-mono text-xl text-gray-800">
-                <p className="text-blue-900">&lt;/&gt;</p>
-              </span>
+              <Logo
+                src="/frontend.svg"
+                title="frontend"
+                alt="my_own_page"
+                sizeClass="size-[0.9em] md:size-[1.5em]"
+              />
             </div>
             <div className="mt-1 text-center font-semibold text-gray-900">
               Frontend Development
@@ -147,11 +160,16 @@ export default async function HomePage() {
             <Badge label="React" className="bg-blue-400" />
             <Badge label="Tailwind CSS" className="bg-blue-400" />
           </SectionBox>
-          <SectionBox className="h-full w-full shadow-lg shadow-green-400/70">
-            {" "}
+
+          <SectionBox className="flex-1 shadow-lg shadow-green-400/70">
             {/*백*/}
             <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-green-300/70">
-              <span className="font-mono text-xl text-gray-800">&lt;/&gt;</span>
+              <Logo
+                src="/backend.svg"
+                title="backend"
+                alt="my_own_page"
+                sizeClass="size-[0.9em] md:size-[1.5em]"
+              />
             </div>
             <div className="mt-1 text-center font-semibold text-gray-900">
               Backend Development
@@ -160,22 +178,47 @@ export default async function HomePage() {
             <Badge label="Express" className="bg-green-500/80" />
             <Badge label="Spring Boot" className="bg-green-500/80" />
           </SectionBox>
-          <SectionBox className="h-full w-full shadow-lg shadow-purple-400/70">
-            {" "}
+
+          <SectionBox className="flex-1 shadow-lg shadow-purple-400/70">
             {/*db*/}
-            <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-purple-300/70"></div>
+            <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-purple-300/70">
+              <Logo
+                src="/database.svg"
+                title="database"
+                alt="my_own_page"
+                sizeClass="size-[0.9em] md:size-[2em]"
+              />
+            </div>
+            <div className="mt-1 text-center font-semibold text-gray-900">
+              Database Management
+            </div>
+            <Badge label="MySQL" className="bg-purple-400/70 mt-2" />
           </SectionBox>
-          <SectionBox className="h-full w-full shadow-lg shadow-orange-400/70">
-            {" "}
+
+          <SectionBox className="flex-1 shadow-lg shadow-orange-400/70">
             {/*tech*/}
-            <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-orange-300/70"></div>
+            <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-orange-300/70">
+              <Logo
+                src="/tech.svg"
+                title="tech"
+                alt="my_own_page"
+                sizeClass="size-[0.9em] md:size-[1.7em]"
+              />
+            </div>
+            <div className="mt-1 text-center font-semibold text-gray-900">
+              Tech Stack & Tools
+            </div>
+            <Badge label="SQLD" className="bg-orange-300/70" />
+            <Badge label="Postman" className="bg-orange-300/70" />
+            <Badge label="Swagger" className="bg-orange-300/70" />
           </SectionBox>
         </div>
       </section>
+
+      {/* Featured Projects */}
       <section>
-        {/* 하단 Featured Projects */}
         <div className="mt-12 mb-12">
-          <div className="flex items-baseline justify-between mb-4">
+          <div className="flex items-stretch justify-between mb-4">
             <h2 className="text-2xl font-bold text-gray-900">
               Featured Projects
             </h2>
@@ -188,10 +231,11 @@ export default async function HomePage() {
               </button>
             </a>
           </div>
-          <div className="flex justify-start items-center gap-3">
-            <SectionBox className="h-full w-full bg-white shadow-lg">
+          {/* 가로 2개 프로젝트 카드 */}
+          <div className="flex gap-3 items-stretch">
+            <SectionBox className="flex-1 bg-white shadow-lg">
               <h1 className="font-bold">Roommate</h1>
-              <p> 어쩌고 저쩌고 설명 </p>
+              <p className="text-sm text-neutral-600">{roommateDesc}</p>
               <div className="flex flex-wrap gap-2 pt-1">
                 <Badge label="Java" className="bg-blue-400" />
                 <Badge label="Springboot" className="bg-blue-400" />
@@ -199,9 +243,10 @@ export default async function HomePage() {
                 <Badge label="thymeleaf" className="bg-blue-400" />
               </div>
             </SectionBox>
-            <SectionBox className="h-full w-full bg-white shadow-lg">
+
+            <SectionBox className="flex-1 bg-white shadow-lg">
               <h1 className="font-bold">My Own Page</h1>
-              <p> 어쩌고 저쩌고 설명 </p>
+              <p className="text-sm text-neutral-600">{myOwnPageDesc}</p>
               <div className="flex flex-wrap gap-2 pt-1">
                 <Badge label="HTML" className="bg-blue-400" />
                 <Badge label="Tailwind CSS" className="bg-blue-400" />
@@ -212,9 +257,10 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Latest Blog Posts */}
       <section>
         <div className="mt-12 mb-12">
-          {/* 최신으로 포스팅된 2개의 블로그 크롤링 */}
           <div className="flex items-baseline justify-between mb-4">
             <h2 className="text-2xl font-bold text-gray-900">
               Latest Blog Posts
@@ -229,7 +275,8 @@ export default async function HomePage() {
             </a>
           </div>
         </div>
-        <div className="flex gap-3">
+        {/* 가로 2개 Velog 카드 */}
+        <div className="flex gap-3 items-stretch">
           <SectionBox className="flex-1 bg-white shadow-lg">
             <a
               href={latest.link}
@@ -266,9 +313,10 @@ export default async function HomePage() {
           </SectionBox>
         </div>
       </section>
+
+      {/* Mini Games */}
       <section>
         <div className="mt-12 mb-12">
-          {/* 최신 미니게임 2개 크롤링 */}
           <div className="flex items-baseline justify-between mb-4">
             <h2 className="text-2xl font-bold text-gray-900">Mini Games</h2>
             <a href="/mini-game">
@@ -281,18 +329,20 @@ export default async function HomePage() {
             </a>
           </div>
         </div>
-        <div className="flex justify-start items-center gap-3">
-          <SectionBox className="h-full w-full bg-white shadow-lg">
+        {/* 가로 2개 미니게임 카드 */}
+        <div className="flex gap-3 items-stretch">
+          <SectionBox className="flex-1 bg-white shadow-lg">
             <h1 className="font-bold">Mini Game Title 1</h1>
-            <p> 어쩌고 저쩌고 설명 </p>
+            <p className="text-sm text-neutral-600">미완성</p>
             <div className="flex flex-wrap gap-2 pt-1">
               <Badge label="게임 태그 1" className="bg-purple-400" />
               <Badge label="게임 태그 2" className="bg-purple-400" />
             </div>
           </SectionBox>
-          <SectionBox className="h-full w-full bg-white shadow-lg">
+
+          <SectionBox className="flex-1 bg-white shadow-lg">
             <h1 className="font-bold">Mini Game Title 2</h1>
-            <p> 어쩌고 저쩌고 설명 </p>
+            <p className="text-sm text-neutral-600">미완성</p>
             <div className="flex flex-wrap gap-2 pt-1">
               <Badge label="게임 태그 3" className="bg-purple-400" />
               <Badge label="게임 태그 4" className="bg-purple-400" />
@@ -300,8 +350,9 @@ export default async function HomePage() {
           </SectionBox>
         </div>
       </section>
+
+      {/* PlayGround */}
       <section>
-        {/* 최하단 PlayGround 최신 2개 크롤링 */}
         <div className="mt-12 mb-12">
           <div className="flex items-baseline justify-between mb-4">
             <h2 className="text-2xl font-bold text-gray-900">PlayGround</h2>
@@ -315,18 +366,20 @@ export default async function HomePage() {
             </a>
           </div>
         </div>
-        <div className="flex justify-start items-center gap-3">
-          <SectionBox className="h-full w-full bg-white shadow-lg">
+        {/* 가로 2개 플레이그라운드 카드 */}
+        <div className="flex gap-3 items-stretch">
+          <SectionBox className="flex-1 bg-white shadow-lg">
             <h1 className="font-bold">PlayGround Title 1</h1>
-            <p> 어쩌고 저쩌고 설명 </p>
+            <p className="text-sm text-neutral-600">미완성</p>
             <div className="flex flex-wrap gap-2 pt-1">
               <Badge label="플레이그라운드 태그 1" className="bg-yellow-400" />
               <Badge label="플레이그라운드 태그 2" className="bg-yellow-400" />
             </div>
           </SectionBox>
-          <SectionBox className="h-full w-full bg-white shadow-lg">
+
+          <SectionBox className="flex-1 bg-white shadow-lg">
             <h1 className="font-bold">PlayGround Title 2</h1>
-            <p> 어쩌고 저쩌고 설명 </p>
+            <p className="text-sm text-neutral-600">미완성</p>
             <div className="flex flex-wrap gap-2 pt-1">
               <Badge label="플레이그라운드 태그 3" className="bg-yellow-400" />
               <Badge label="플레이그라운드 태그 4" className="bg-yellow-400" />
