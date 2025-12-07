@@ -9,7 +9,7 @@ type Props = {
 
 export default function SectionBox({ title, children, className = "" }: Props) {
   return (
-    <section className={`rounded-2xl border bg-white p-6 shadow-sm ${className}`}>
+    <section className={`rounded-2xl border-gray-400 bg-white p-6 shadow-sm ${className}`}>
       {title && <h2 className="mb-2 text-lg font-semibold">{title}</h2>}
       {children}
     </section>
