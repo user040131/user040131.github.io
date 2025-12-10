@@ -330,23 +330,22 @@ export default async function HomePage() {
             </a>
           </div>
         </div>
-        {/* 가로 2개 플레이그라운드 카드 */}
         <div className="flex gap-3 items-stretch">
-          <SectionBox className="flex-1 bg-white shadow-lg">
-            <h1 className="font-bold">PlayGround Title 1</h1>
-            <p className="text-sm text-neutral-600">미완성</p>
-            <div className="flex flex-wrap gap-2 pt-1">
-              <Badge label="플레이그라운드 태그 1" className="bg-yellow-400" />
-              <Badge label="플레이그라운드 태그 2" className="bg-yellow-400" />
-            </div>
-          </SectionBox>
+          <SectionBox className="flex-1 bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <h1 className="font-bold text-lg text-gray-900">
+              Digital Wave Simulation
+            </h1>
 
-          <SectionBox className="flex-1 bg-white shadow-lg">
-            <h1 className="font-bold">PlayGround Title 2</h1>
-            <p className="text-sm text-neutral-600">미완성</p>
-            <div className="flex flex-wrap gap-2 pt-1">
-              <Badge label="플레이그라운드 태그 3" className="bg-yellow-400" />
-              <Badge label="플레이그라운드 태그 4" className="bg-yellow-400" />
+            <p className="text-sm text-neutral-600 mt-2 leading-relaxed">
+              Three.js를 활용하여 수많은 입자가 마우스 움직임에 따라 시점이 변하고, <br />
+              파동이 일렁이는 인터랙티브 3D 웹 시뮬레이션을 구현했습니다. <br />
+              사용자는 마우스나 터치로 파동을 조작하며 몰입감 있는 경험을 즐길 수 있습니다.
+            </p>
+
+            <div className="flex flex-wrap gap-2 mt-4">
+              <Badge label="Three.js" className="bg-yellow-500/80 text-white" />
+              <Badge label="WebGL" className="bg-yellow-500/80 text-white" />
+              <Badge label="Interactive Art" className="bg-yellow-500/80 text-white"/>
             </div>
           </SectionBox>
         </div>
