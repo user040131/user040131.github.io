@@ -315,43 +315,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Mini Games */}
-      <section>
-        <div className="mt-12 mb-12">
-          <div className="flex items-baseline justify-between mb-4">
-            <h2 className="text-2xl font-bold text-gray-900">Mini Games</h2>
-            <a href="/mini-game">
-              <button className="group inline-flex items-center gap-1 text-sm font-medium shadow-lg p-2 rounded-xl mr-3 hover:text-blue-800">
-                <span>View All</span>
-                <span className="transition-transform duration-150 group-hover:translate-x-0.5">
-                  →
-                </span>
-              </button>
-            </a>
-          </div>
-        </div>
-        {/* 가로 2개 미니게임 카드 */}
-        <div className="flex gap-3 items-stretch">
-          <SectionBox className="flex-1 bg-white shadow-lg">
-            <h1 className="font-bold">Mini Game Title 1</h1>
-            <p className="text-sm text-neutral-600">미완성</p>
-            <div className="flex flex-wrap gap-2 pt-1">
-              <Badge label="게임 태그 1" className="bg-purple-400" />
-              <Badge label="게임 태그 2" className="bg-purple-400" />
-            </div>
-          </SectionBox>
-
-          <SectionBox className="flex-1 bg-white shadow-lg">
-            <h1 className="font-bold">Mini Game Title 2</h1>
-            <p className="text-sm text-neutral-600">미완성</p>
-            <div className="flex flex-wrap gap-2 pt-1">
-              <Badge label="게임 태그 3" className="bg-purple-400" />
-              <Badge label="게임 태그 4" className="bg-purple-400" />
-            </div>
-          </SectionBox>
-        </div>
-      </section>
-
       {/* PlayGround */}
       <section>
         <div className="mt-12 mb-12">

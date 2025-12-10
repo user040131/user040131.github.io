@@ -27,7 +27,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                    <li><Link href="/"         className="text-gray-700 hover:underline font-medium">Main</Link></li>
                    <li><a href="/portfolio"   className="text-gray-700 hover:underline font-medium">Portfolio</a></li>
                    <li><a href="https://velog.io/@user040131/posts"        className="text-gray-700 hover:underline font-medium">Blog</a></li>
-                   <li><a href="/mini-game"   className="text-gray-700 hover:underline font-medium">MiniGame</a></li>
                    <li><a href="/playground"  className="text-gray-700 hover:underline font-medium">PlayGround</a></li>
                  </ul>
                 </nav>
