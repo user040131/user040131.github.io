@@ -88,6 +88,12 @@ export default function HomePage() {
                   sizeClass="size-[0.9em] md:size-[2em]"
                 />
                 <Logo
+                  src="/logo/typescript.svg"
+                  title="typescript"
+                  alt="my_own_page"
+                  sizeClass="size-[0.9em] md:size-[2em]"
+                />
+                <Logo
                   src="/logo/next.svg"
                   title="nextjs"
                   alt="my_own_page"
