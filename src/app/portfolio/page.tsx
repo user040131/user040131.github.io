@@ -116,6 +116,12 @@ export default function HomePage() {
                     alt="my_own_page"
                     sizeClass="size-[0.9em] md:size-[2em]"
                   />
+                  <Logo
+                    src="/logo/express.svg"
+                    title="expressjs"
+                    alt="my_own_page"
+                    sizeClass="size-[0.9em] md:size-[2em]"
+                  />
                 </div>
               </h4>
               <h4 className="text-lg font-bold text-gray-800 mb-6 pl-3 border-l-4 border-purple-500">

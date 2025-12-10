@@ -180,9 +180,9 @@ export default async function HomePage() {
             <Badge label="Spring Boot" className="bg-green-500/80" />
           </SectionBox>
 
-          <SectionBox className="flex-1 shadow-lg shadow-purple-400/70">
+          <SectionBox className="flex-1 shadow-lg shadow-purple-500/70">
             {/*db*/}
-            <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-purple-300/70">
+            <div className="mx-auto grid place-items-center size-12 rounded-2xl bg-purple-400/70">
               <Logo
                 src="/database.svg"
                 title="database"
