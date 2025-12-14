@@ -343,6 +343,51 @@ export default function HomePage() {
                 />
               </div>
             </SectionBox>
+            <SectionBox className="h-full mt-6">
+              <div className="flex justify-start items-center gap-3 mb-1">
+                <h3 className="col-span-full text-center mr-4 text-6xl md:text-2xl font-bold text-gray-900">
+                  WhatShouldIDo
+                </h3>
+                <a
+                  href="https://github.com/user040131/WhatShouldIDo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80"
+                >
+                  <Logo
+                    src="/github.svg"
+                    title="github"
+                    alt="hangman"
+                    sizeClass="size-[0.9em] md:size-[2em]"
+                  />
+                </a>
+              </div>
+              <section className="mb-1">
+                <p className="text-sm font-bold">2025.12.14 ~ 진행 중</p>
+              </section>
+              <section className="mb-4">
+                <p className="text-gray-500 text-sm pl-2">
+                  개발자로써 다양한 기능을 실험하고 상상을 마음껏 구현하는 All-in-one playground입니다.<br></br>
+                  흥미가 돋는 기능을 LLM과 적극적으로 협업하여 빠르게 프로토타이핑하고 이를 고도화하는 것을<br></br>
+                  목표로 삼고 있습니다.
+                </p>
+              </section>
+              <div className="flex justify-start items-center gap-1">
+                <Badge label="JAVA" className="bg-blue-500 text-white" />
+                <Badge label="SpringBoot" className="bg-blue-500 text-white" />
+                <Badge label="Thymeleaf" className="bg-blue-500 text-white" />
+                <Badge
+                  label="MySQL"
+                  className="bg-blue-500 text-white"
+                />
+                <Badge label="외부 API 호출" className="bg-blue-500 text-white" />
+                <Badge label="HTML/CSS/JS" className="bg-blue-500 text-white" />
+                <Badge
+                  label="솔로 프로젝트"
+                  className="bg-green-500 text-white"
+                />
+              </div>
+            </SectionBox>
           </div>
         </section>
         <section>
