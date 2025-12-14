@@ -264,7 +264,7 @@ export default function HomePage() {
                 </a>
               </div>
               <section className="mb-1">
-                <p className="text-sm font-bold">2025.10.24 ~ 진행 중</p>
+                <p className="text-sm font-bold">2025.10.24 ~ ∞</p>
               </section>
               <section className="mb-4">
                 <p className="text-gray-500 text-sm pl-2">
