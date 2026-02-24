@@ -18,6 +18,7 @@ export default async function HomePage() {
   const [latest, second] = velogPosts;
   const roommateDesc = PROJECT_DESCRIPTIONS["Roommate_Sum"];
   const myOwnPageDesc = PROJECT_DESCRIPTIONS["myOwnPage_Sum"];
+  const soksakDesc = PROJECT_DESCRIPTIONS["Soksak"];
 
   return (
     <>
@@ -240,13 +241,13 @@ export default async function HomePage() {
           {/* 가로 2개 프로젝트 카드 */}
           <div className="flex gap-3 items-stretch">
             <SectionBox className="flex-1 bg-white shadow-lg">
-              <h1 className="font-bold">Roommate</h1>
-              <p className="text-sm text-neutral-600">{roommateDesc}</p>
+              <h1 className="font-bold">Soksak</h1>
+              <p className="text-sm text-neutral-600">{soksakDesc}</p>
               <div className="flex flex-wrap gap-2 pt-1">
-                <Badge label="Java" className="bg-blue-400" />
-                <Badge label="Springboot" className="bg-blue-400" />
+                <Badge label="Node.js" className="bg-blue-400" />
+                <Badge label="Express.js" className="bg-blue-400" />
+                <Badge label="prisma" className="bg-blue-400" />
                 <Badge label="MySQL" className="bg-blue-400" />
-                <Badge label="thymeleaf" className="bg-blue-400" />
               </div>
             </SectionBox>
 
