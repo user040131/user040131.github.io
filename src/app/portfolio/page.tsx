@@ -395,6 +395,92 @@ export default function HomePage() {
                 />
               </div>
             </SectionBox>
+            <SectionBox className="h-full mt-6">
+              <div className="flex justify-start items-center gap-3 mb-1">
+                <h3 className="col-span-full text-center mr-4 text-6xl md:text-2xl font-bold text-gray-900">
+                  속삭편지
+                </h3>
+                <a
+                  href="https://github.com/soksak-letter/soksak-Server"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80"
+                >
+                  <Logo
+                    src="/github.svg"
+                    title="github"
+                    alt="hangman"
+                    sizeClass="size-[0.9em] md:size-[2em]"
+                  />
+                </a>
+              </div>
+              <section className="mb-1">
+                <p className="text-sm font-bold">2025.11.17 ~ 2026.02.20</p>
+              </section>
+              <section className="mb-4">
+                <p className="text-gray-500 text-sm pl-2">
+                  이 서비스는 도파민 과잉과 피상적 연결에 지친 20대를 대상으로,<br></br>
+                  ‘3일 뒤 나에게 쓰는 편지’와 제한된 익명 교환 편지를 통해 성찰과<br></br>
+                  진정성 있는 연결을 유도하는 심리적 루틴 설계형 플랫폼입니다.<br></br>
+                  데이터 기반 매칭·후기 반영 알고리즘과 암호화·예약 발송 시스템을 통해, <br></br>
+                  즉각적 자극이 아닌 지연 보상과 깊이 있는 대화를 습관화하도록 돕는 감정 관리 서비스를 목표하였습니다.<br></br>
+                  --------------------------------------------------------------------------------------<br></br>
+                  해당 프로젝트에선 백엔드 개발 전반에 참여하였으며, 최종적으로 우수상 수상을 하였습니다.
+                </p>
+              </section>
+              <div className="flex justify-start items-center gap-1">
+                <Badge label="JS" className="bg-blue-500 text-white" />
+                <Badge label="Node.js" className="bg-blue-500 text-white" />
+                <Badge label="Express.js" className="bg-blue-500 text-white" />
+                <Badge label="prisma" className="bg-blue-500 text-white" />
+                <Badge
+                  label="MySQL"
+                  className="bg-blue-500 text-white"
+                />
+                <Badge
+                  label="UMC 최종 프로젝트"
+                  className="bg-green-500 text-white"
+                />
+              </div>
+            </SectionBox>
+            <SectionBox className="h-full mt-6">
+              <div className="flex justify-start items-center gap-3 mb-1">
+                <h3 className="col-span-full text-center mr-4 text-6xl md:text-2xl font-bold text-gray-900">
+                  MoniFit
+                </h3>
+                <a
+                  href="https://github.com/Leets-Official/MoniFit-BE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80"
+                >
+                  <Logo
+                    src="/github.svg"
+                    title="github"
+                    alt="hangman"
+                    sizeClass="size-[0.9em] md:size-[2em]"
+                  />
+                </a>
+              </div>
+              <section className="mb-1">
+                <p className="text-sm font-bold">2025.12.22 ~ 2026.02.13</p>
+              </section>
+              <section className="mb-4">
+                <p className="text-gray-500 text-sm pl-2">
+                  UI로써 가시성을 제공해 사용자가 보다 목표를 명확히 인지할 수 있도록 돕는 가계부 어플리케이션입니다.<br></br>
+                  --------------------------------------------------------------------------------------<br></br>
+                  해당 프로젝트에선 CI/CD 및 서버 관련에 대해서 전담하였습니다.
+                </p>
+              </section>
+              <div className="flex justify-start items-center gap-1">
+                <Badge label="AWS" className="bg-blue-500 text-white" />
+                <Badge label="Github Actions" className="bg-blue-500 text-white" />
+                <Badge
+                  label="Leets 최종 프로젝트"
+                  className="bg-green-500 text-white"
+                />
+              </div>
+            </SectionBox>
           </div>
         </section>
         <section>
