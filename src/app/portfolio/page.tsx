@@ -369,7 +369,14 @@ export default function HomePage() {
                 <p className="text-gray-500 text-sm pl-2">
                   개발자로써 다양한 기능을 실험하고 상상을 마음껏 구현하는 All-in-one playground입니다.<br></br>
                   흥미가 돋는 기능을 LLM과 적극적으로 협업하여 빠르게 프로토타이핑하고 이를 고도화하는 것을<br></br>
-                  목표로 삼고 있습니다.
+                  목표로 삼고 있습니다.<br></br>
+                  <ul>
+                    <li>----- 현재 구현된 기능들 -----</li>
+                    <li>1. 메뉴 추천 기능 </li>
+                    <li>2. 로또 번호 출력 <Badge label="LinkedHashSet" className="bg-b-500 text-white" /></li>
+                    <li>3. ai 챗봇 <Badge label="ollama" className="bg-blue-500 text-white" /> <Badge label="AJAX" className="bg-blue-500 text-white" /></li>
+                    <li>4. 영화 추천 <Badge label="MovieDB API" className="bg-blue-500 text-white" /> <Badge label="R^10으로 분석된 유저 취향 기반 추천" className="bg-blue-500 text-white" /></li>
+                  </ul>
                 </p>
               </section>
               <div className="flex justify-start items-center gap-1">
@@ -417,6 +424,12 @@ export default function HomePage() {
                 <li>codein 내에서 진행하는 해커톤 참여, 1등상 수상</li>
                 <li>codein과 밝은눈안과 협업 tf 프로젝트 참여</li>
                 <li>2025년도 2학기, 교내동아리 Leets와 연합동아리 UMC 참여</li>
+                <li>UMC 내에서 진행된 데모데이, 속삭편지 참여, 우수상 수상</li>
+                <li>Leets 내에서 진행된 최종 프로젝트, MoniFit 참여</li>
+              </ol>
+              <h2 className="md:text-xl">2026</h2>
+              <ol className="list-disc pl-8">
+                <li>복학 예정</li>
               </ol>
             </div>
           </section>
