@@ -68,7 +68,7 @@ export default async function HomePage() {
           flex
           flex-col
           gap-4
-  "
+          "
           >
             {/* 헤더 */}
             <div className="text-white">
@@ -194,6 +194,8 @@ export default async function HomePage() {
               Database Management
             </div>
             <Badge label="MySQL" className="bg-purple-400/70 mt-2" />
+            <Badge label="Redis" className="bg-purple-400/70" />
+            <Badge label="RDS" className="bg-purple-400/70" />
           </SectionBox>
 
           <SectionBox className="flex-1 shadow-lg shadow-orange-400/70">
@@ -212,6 +214,9 @@ export default async function HomePage() {
             <Badge label="SQLD" className="bg-orange-300/70" />
             <Badge label="Postman" className="bg-orange-300/70" />
             <Badge label="Swagger" className="bg-orange-300/70" />
+            <Badge label="Github Actions" className="bg-orange-300/70" />
+            <Badge label="Docker" className="bg-orange-300/70" />
+            <Badge label="AWS" className="bg-orange-300/70" />
           </SectionBox>
         </div>
       </section>
