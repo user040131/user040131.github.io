@@ -398,6 +398,51 @@ export default function HomePage() {
             <SectionBox className="h-full mt-6">
               <div className="flex justify-start items-center gap-3 mb-1">
                 <h3 className="col-span-full text-center mr-4 text-6xl md:text-2xl font-bold text-gray-900">
+                  SINO
+                </h3>
+                <a
+                  href="https://github.com/UMC-SINO/SINO-Server"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80"
+                >
+                  <Logo
+                    src="/github.svg"
+                    title="github"
+                    alt="hangman"
+                    sizeClass="size-[0.9em] md:size-[2em]"
+                  />
+                </a>
+              </div>
+              <section className="mb-1">
+                <p className="text-sm font-bold">2025.12.15 ~ 2025.12.22</p>
+              </section>
+              <section className="mb-4">
+                <p className="text-gray-500 text-sm pl-2">
+                  SINO 프로젝트는 ai 분석을 적극 활용, 사용자의 감정을 기반으로 하여 post를 signal과 noise로 나누어 연/월별 리포트 생성을 주 기능으로 하여,<br></br>
+                  사용자가 사진과 함께 일상을 감정으로써 정리할 수 있도록 도운 프로젝트입니다.<br></br>
+                  --------------------------------------------------------------------------------------<br></br>
+                  해당 프로젝트에선 백엔드 개발 전반에 참여하였으며, 최종적으로 우수상 수상을 하였습니다.
+                </p>
+              </section>
+              <div className="flex justify-start items-center gap-1">
+                <Badge label="JS" className="bg-blue-500 text-white" />
+                <Badge label="Node.js" className="bg-blue-500 text-white" />
+                <Badge label="Express.js" className="bg-blue-500 text-white" />
+                <Badge label="prisma" className="bg-blue-500 text-white" />
+                <Badge
+                  label="MySQL"
+                  className="bg-blue-500 text-white"
+                />
+                <Badge
+                  label="UMC 장기해커톤"
+                  className="bg-green-500 text-white"
+                />
+              </div>
+            </SectionBox>
+            <SectionBox className="h-full mt-6">
+              <div className="flex justify-start items-center gap-3 mb-1">
+                <h3 className="col-span-full text-center mr-4 text-6xl md:text-2xl font-bold text-gray-900">
                   속삭편지
                 </h3>
                 <a
