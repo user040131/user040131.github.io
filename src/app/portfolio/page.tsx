@@ -369,7 +369,14 @@ export default function HomePage() {
                 <p className="text-gray-500 text-sm pl-2">
                   개발자로써 다양한 기능을 실험하고 상상을 마음껏 구현하는 All-in-one playground입니다.<br></br>
                   흥미가 돋는 기능을 LLM과 적극적으로 협업하여 빠르게 프로토타이핑하고 이를 고도화하는 것을<br></br>
-                  목표로 삼고 있습니다.
+                  목표로 삼고 있습니다.<br></br>
+                  <ul>
+                    <li>----- 현재 구현된 기능들 -----</li>
+                    <li>1. 메뉴 추천 기능 </li>
+                    <li>2. 로또 번호 출력 <Badge label="LinkedHashSet" className="bg-b-500 text-white" /></li>
+                    <li>3. ai 챗봇 <Badge label="ollama" className="bg-blue-500 text-white" /> <Badge label="AJAX" className="bg-blue-500 text-white" /></li>
+                    <li>4. 영화 추천 <Badge label="MovieDB API" className="bg-blue-500 text-white" /> <Badge label="R^10으로 분석된 유저 취향 기반 추천" className="bg-blue-500 text-white" /></li>
+                  </ul>
                 </p>
               </section>
               <div className="flex justify-start items-center gap-1">
@@ -384,6 +391,92 @@ export default function HomePage() {
                 <Badge label="HTML/CSS/JS" className="bg-blue-500 text-white" />
                 <Badge
                   label="솔로 프로젝트"
+                  className="bg-green-500 text-white"
+                />
+              </div>
+            </SectionBox>
+            <SectionBox className="h-full mt-6">
+              <div className="flex justify-start items-center gap-3 mb-1">
+                <h3 className="col-span-full text-center mr-4 text-6xl md:text-2xl font-bold text-gray-900">
+                  속삭편지
+                </h3>
+                <a
+                  href="https://github.com/soksak-letter/soksak-Server"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80"
+                >
+                  <Logo
+                    src="/github.svg"
+                    title="github"
+                    alt="hangman"
+                    sizeClass="size-[0.9em] md:size-[2em]"
+                  />
+                </a>
+              </div>
+              <section className="mb-1">
+                <p className="text-sm font-bold">2025.11.17 ~ 2026.02.20</p>
+              </section>
+              <section className="mb-4">
+                <p className="text-gray-500 text-sm pl-2">
+                  이 서비스는 도파민 과잉과 피상적 연결에 지친 20대를 대상으로,<br></br>
+                  ‘3일 뒤 나에게 쓰는 편지’와 제한된 익명 교환 편지를 통해 성찰과<br></br>
+                  진정성 있는 연결을 유도하는 심리적 루틴 설계형 플랫폼입니다.<br></br>
+                  데이터 기반 매칭·후기 반영 알고리즘과 암호화·예약 발송 시스템을 통해, <br></br>
+                  즉각적 자극이 아닌 지연 보상과 깊이 있는 대화를 습관화하도록 돕는 감정 관리 서비스를 목표하였습니다.<br></br>
+                  --------------------------------------------------------------------------------------<br></br>
+                  해당 프로젝트에선 백엔드 개발 전반에 참여하였으며, 최종적으로 우수상 수상을 하였습니다.
+                </p>
+              </section>
+              <div className="flex justify-start items-center gap-1">
+                <Badge label="JS" className="bg-blue-500 text-white" />
+                <Badge label="Node.js" className="bg-blue-500 text-white" />
+                <Badge label="Express.js" className="bg-blue-500 text-white" />
+                <Badge label="prisma" className="bg-blue-500 text-white" />
+                <Badge
+                  label="MySQL"
+                  className="bg-blue-500 text-white"
+                />
+                <Badge
+                  label="UMC 최종 프로젝트"
+                  className="bg-green-500 text-white"
+                />
+              </div>
+            </SectionBox>
+            <SectionBox className="h-full mt-6">
+              <div className="flex justify-start items-center gap-3 mb-1">
+                <h3 className="col-span-full text-center mr-4 text-6xl md:text-2xl font-bold text-gray-900">
+                  MoniFit
+                </h3>
+                <a
+                  href="https://github.com/Leets-Official/MoniFit-BE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80"
+                >
+                  <Logo
+                    src="/github.svg"
+                    title="github"
+                    alt="hangman"
+                    sizeClass="size-[0.9em] md:size-[2em]"
+                  />
+                </a>
+              </div>
+              <section className="mb-1">
+                <p className="text-sm font-bold">2025.12.22 ~ 2026.02.13</p>
+              </section>
+              <section className="mb-4">
+                <p className="text-gray-500 text-sm pl-2">
+                  UI로써 가시성을 제공해 사용자가 보다 목표를 명확히 인지할 수 있도록 돕는 가계부 어플리케이션입니다.<br></br>
+                  --------------------------------------------------------------------------------------<br></br>
+                  해당 프로젝트에선 CI/CD 및 서버 관련에 대해서 전담하였습니다.
+                </p>
+              </section>
+              <div className="flex justify-start items-center gap-1">
+                <Badge label="AWS" className="bg-blue-500 text-white" />
+                <Badge label="Github Actions" className="bg-blue-500 text-white" />
+                <Badge
+                  label="Leets 최종 프로젝트"
                   className="bg-green-500 text-white"
                 />
               </div>
@@ -417,6 +510,12 @@ export default function HomePage() {
                 <li>codein 내에서 진행하는 해커톤 참여, 1등상 수상</li>
                 <li>codein과 밝은눈안과 협업 tf 프로젝트 참여</li>
                 <li>2025년도 2학기, 교내동아리 Leets와 연합동아리 UMC 참여</li>
+                <li>UMC 내에서 진행된 데모데이, 속삭편지 참여, 우수상 수상</li>
+                <li>Leets 내에서 진행된 최종 프로젝트, MoniFit 참여</li>
+              </ol>
+              <h2 className="md:text-xl">2026</h2>
+              <ol className="list-disc pl-8">
+                <li>복학 예정</li>
               </ol>
             </div>
           </section>
