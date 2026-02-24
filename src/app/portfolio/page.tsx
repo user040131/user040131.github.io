@@ -555,8 +555,9 @@ export default function HomePage() {
                 <li>codein 내에서 진행하는 해커톤 참여, 1등상 수상</li>
                 <li>codein과 밝은눈안과 협업 tf 프로젝트 참여</li>
                 <li>2025년도 2학기, 교내동아리 Leets와 연합동아리 UMC 참여</li>
-                <li>UMC 내에서 진행된 데모데이, 속삭편지 참여, 우수상 수상</li>
-                <li>Leets 내에서 진행된 최종 프로젝트, MoniFit 참여</li>
+                <li>UMC 내에서 진행된 장기 해커톤, SINO Node.js 파트 참여, 우수상 수상</li>
+                <li>UMC 내에서 진행된 데모데이, 속삭편지 Node.js 파트 참여, 우수상 수상</li>
+                <li>Leets 내에서 진행된 최종 프로젝트, MoniFit SpringBoot 파트 참여</li>
               </ol>
               <h2 className="md:text-xl">2026</h2>
               <ol className="list-disc pl-8">
