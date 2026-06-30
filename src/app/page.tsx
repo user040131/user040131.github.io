@@ -124,7 +124,7 @@ export default async function HomePage() {
                 Currently focusing on (2026/06)
               </div>
               <p className="text-white/80">
-                Spring Boot ·
+                Spring Boot · SQL · Infrastructure
               </p>
             </div>
           </aside>
