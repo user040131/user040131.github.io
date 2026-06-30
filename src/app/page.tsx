@@ -121,12 +121,10 @@ export default async function HomePage() {
             {/* Focus / 현재 관심 영역 */}
             <div className="text-[11px] leading-snug text-white/90">
               <div className="font-semibold text-white/90 mb-1">
-                Currently focusing on (2025/10/26)
+                Currently focusing on (2026/06)
               </div>
               <p className="text-white/80">
-                HTML + CSS + JS (Next.js) ·
-                <br />
-                Node.js(Express) Backend ·
+                Spring Boot ·
               </p>
             </div>
           </aside>
