@@ -193,6 +193,7 @@ export default async function HomePage() {
               Database Management
             </div>
             <Badge label="MySQL" className="bg-purple-400/70 mt-2" />
+            <Badge label="PostgreSQL" className="bg-purple-400/70" />
             <Badge label="Redis" className="bg-purple-400/70" />
             <Badge label="RDS" className="bg-purple-400/70" />
           </SectionBox>
@@ -250,13 +251,13 @@ export default async function HomePage() {
             </SectionBox>
 
             <SectionBox className="flex-1 bg-white shadow-lg">
-              <h1 className="font-bold">My Own Page</h1>
-              <p className="text-sm text-neutral-600">{myOwnPageDesc}</p>
+              <h1 className="font-bold">Jjikmeok</h1>
+              <p className="text-sm text-neutral-600">{jjikMeokDesc}</p>
               <div className="flex flex-wrap gap-2 pt-1">
-                <Badge label="HTML" className="bg-blue-400" />
-                <Badge label="Tailwind CSS" className="bg-blue-400" />
-                <Badge label="JS/TS" className="bg-blue-400" />
-                <Badge label="Next.js" className="bg-blue-400" />
+                <Badge label="SpringBoot" className="bg-blue-400" />
+                <Badge label="PostgreSQL" className="bg-blue-400" />
+                <Badge label="AWS" className="bg-blue-400" />
+                <Badge label="OCI" className="bg-blue-400" />
               </div>
             </SectionBox>
           </div>
