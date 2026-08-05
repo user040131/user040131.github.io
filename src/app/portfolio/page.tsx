@@ -526,6 +526,49 @@ export default function HomePage() {
                 />
               </div>
             </SectionBox>
+            <SectionBox className="h-full mt-6">
+              <div className="flex justify-start items-center gap-3 mb-1">
+                <h3 className="col-span-full text-center mr-4 text-6xl md:text-2xl font-bold text-gray-900">
+                  Jjikmeok
+                </h3>
+                <a
+                  href="https://github.com/JJICK-MEOK/Server"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80"
+                >
+                  <Logo
+                    src="/github.svg"
+                    title="github"
+                    alt="hangman"
+                    sizeClass="size-[0.9em] md:size-[2em]"
+                  />
+                </a>
+              </div>
+              <section className="mb-1">
+                <p className="text-sm font-bold">2026.03.25 ~ 2026.07.17</p>
+              </section>
+              <section className="mb-4">
+                <p className="text-gray-500 text-sm pl-2">
+                  찍먹은 새로운 취미나 활동을 시작하고 싶지만, 무엇을 해야 할지 잘 모르는 사람들을 위한 활동 탐색 서비스입니다. <br></br>
+                  사용자가 관심 있는 주제와 선호하는 분위기, 활동 가능한 지역을 선택하면 테니스, 클라이밍, 서핑 같은 다양한 활동을 자신의 취향에 맞게 찾아볼 수 있습니다. <br></br>
+                  말 그대로 새로운 활동을 본격적으로 시작하기 전에 가볍게 ‘찍어 먹어 볼 수 있도록’ 돕는 서비스입니다.
+                  --------------------------------------------------------------------------------------<br></br>
+                  백엔드 개발자로 참여해 Spring Boot 기반 REST API와 데이터 처리 로직을 구현했고, Docker 실행 환경과 AWS EC2·S3 배포 환경을 구성했습니다. <br></br>
+                  또한 GitHub Actions를 활용해 배포 과정을 자동화하며 기능 구현부터 배포와 운영까지의 흐름을 경험했습니다.
+                </p>
+              </section>
+              <div className="flex justify-start items-center gap-1">
+                <Badge label="SpringBoot" className="bg-blue-500 text-white" />
+                <Badge label="AWS" className="bg-blue-500 text-white" />
+                <Badge label="OCI" className="bg-blue-500 text-white" />
+                <Badge label="Github Actions" className="bg-blue-500 text-white" />
+                <Badge
+                  label="잇타 최종 프로젝트"
+                  className="bg-green-500 text-white"
+                />
+              </div>
+            </SectionBox>
           </div>
         </section>
         <section>
@@ -562,6 +605,8 @@ export default function HomePage() {
               <h2 className="md:text-xl">2026</h2>
               <ol className="list-disc pl-8">
                 <li>2026년도 1학기 복학</li>
+                <li>연합동아리 잇타(It's time) 9기 참여</li>
+                <li>잇타 서 진행된 최종 프로젝트, 찍먹 SpringBoot 및 AWS/OCI 파트 참여 <a href="https://jjick-meok.vercel.app/" target="_blank" rel="noopener noreferrer"> 찍먹 사용해보기 </a></li>
               </ol>
             </div>
           </section>
