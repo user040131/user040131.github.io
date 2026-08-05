@@ -1,4 +1,4 @@
-export type ProjectId = "Roommate" | "Roommate_Sum" | "myOwnPage" | "myOwnPage_Sum" | "Soksak" | "Soksak_Sum";
+export type ProjectId = "Roommate" | "Roommate_Sum" | "myOwnPage" | "myOwnPage_Sum" | "Soksak" | "Soksak_Sum" | "Jjikmeok";
 
 export const PROJECT_DESCRIPTIONS: Record<ProjectId, string> = {
     Roommate: `
