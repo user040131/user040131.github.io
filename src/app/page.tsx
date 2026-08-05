@@ -19,6 +19,7 @@ export default async function HomePage() {
   const roommateDesc = PROJECT_DESCRIPTIONS["Roommate_Sum"];
   const myOwnPageDesc = PROJECT_DESCRIPTIONS["myOwnPage_Sum"];
   const soksakDesc = PROJECT_DESCRIPTIONS["Soksak"];
+  const jjikMeokDesc = PROJECT_DESCRIPTIONS["Jjikmeok"];
 
   return (
     <>
