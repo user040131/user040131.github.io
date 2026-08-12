@@ -8,6 +8,7 @@ export default function PlayGroundPage() {
 
   useEffect(() => {
     if (!mountRef.current) return;
+    const mountElement = mountRef.current;
 
     // --- 1. 씬 & 카메라 설정 ---
     const scene = new THREE.Scene();
@@ -31,7 +32,7 @@ export default function PlayGroundPage() {
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    mountRef.current.appendChild(renderer.domElement);
+    mountElement.appendChild(renderer.domElement);
 
     // --- 2. 입자 시스템 (Particle System) 생성 ---
     // 가로세로 입자 개수 (개수가 많을수록 부드럽지만 성능을 탐)
@@ -103,6 +104,7 @@ export default function PlayGroundPage() {
     let mouseX = 0;
     let mouseY = 0;
     let count = 0; // 시간 경과 변수
+    let animationFrameId = 0;
 
     const handleMouseMove = (event: MouseEvent) => {
       // 화면 중심을 0,0으로 하는 정규화된 좌표 계산
@@ -123,7 +125,7 @@ export default function PlayGroundPage() {
 
     // --- 4. 애니메이션 루프 ---
     const animate = () => {
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
 
       // 카메라 움직임 (마우스 위치에 따라 부드럽게 따라감)
       camera.position.x += (mouseX - camera.position.x) * 0.05;
@@ -134,7 +136,6 @@ export default function PlayGroundPage() {
       const colors = particles.geometry.attributes.color.array as Float32Array;
       
       let i = 0;
-      let j = 0;
       
       // 수학적 파동 함수 (Sine Wave)
       for (let ix = 0; ix < AMOUNTX; ix++) {
@@ -157,7 +158,6 @@ export default function PlayGroundPage() {
           colors[i + 2] = 0.8; 
 
           i += 3;
-          j++;
         }
       }
 
@@ -184,9 +184,10 @@ export default function PlayGroundPage() {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
       
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (renderer.domElement.parentElement === mountElement) {
+        mountElement.removeChild(renderer.domElement);
       }
       geometry.dispose();
       material.dispose();
@@ -195,7 +196,7 @@ export default function PlayGroundPage() {
   }, []);
 
   return (
-    <main className="relative w-full h-screen overflow-hidden bg-black">
+    <section className="relative w-full h-screen overflow-hidden bg-black">
       {/* 3D 캔버스 영역 */}
       <div ref={mountRef} className="absolute inset-0 z-0" />
 
@@ -214,6 +215,6 @@ export default function PlayGroundPage() {
            <span>SYSTEM: ONLINE</span>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

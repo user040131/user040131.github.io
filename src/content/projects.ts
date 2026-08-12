@@ -1,28 +1,135 @@
-export type ProjectId = "Roommate" | "Roommate_Sum" | "myOwnPage" | "myOwnPage_Sum" | "Soksak" | "Soksak_Sum" | "Jjikmeok";
-
-export const PROJECT_DESCRIPTIONS: Record<ProjectId, string> = {
-    Roommate: `
-Stackers는 Spring Boot와 React를 기반으로 한 스터디/미션 관리 플랫폼입니다.
-팀별 미션 관리, 출석 체크, 리워드 시스템을 통해 스터디 참여를 유도합니다.
-`,
-    Roommate_Sum: `
-Roommate는 Springboot, Thymeleaf를 사용해 개발된 ai 정량적 평가를 기반으로 한 
-룸메이트 매칭 웹 애플리케이션입니다.
-`,
-    myOwnPage: `
-개발 블로그 글을 자동으로 불러와서 포트폴리오에 노출하는 프로젝트입니다.
-Next.js App Router와 Velog RSS를 활용해서 최신 글 두 개를 실시간으로 가져옵니다.
-`,
-    myOwnPage_Sum: `
-한 줄 소개보다, 실제 코드와 결과물로 말하는 개발자를 보여주기 위해 포트폴리오를 직접 제작했습니다.
-`,
-    Soksak: `
-Soksak은 Node.js를 기반으로 한 현대인의 도파민 과잉을 편지의 형태로 해결하기 위한 웹 애플리케이션입니다. 
-` ,
-    Soksak_Sum: `
-Soksak은 Node.js를 기반으로 한 현대인의 도파민 과잉을 편지의 형태로 해결하기 위한 웹 애플리케이션입니다.
-` ,
-    Jjikmeok: `
-찍먹은 사용자의 관심사와 활동 지역을 기반으로 새로운 취미나 원데이 활동을 찾아주는 서비스입니다. 어떤 취미가 자신에게 맞는지 고민하는 사람이 여러 활동을 부담 없이 탐색하고 체험할 수 있도록 만들었습니다.
-`
+export type Project = {
+  name: string;
+  englishName?: string;
+  period: string;
+  role: string;
+  headline: string;
+  summary: string;
+  contribution: string[];
+  decisions: string[];
+  stack: string[];
+  award?: string;
+  github: string;
+  service?: string;
+  featured?: boolean;
+  accent: "lime" | "cyan" | "violet" | "amber";
 };
+
+export const PROJECTS: Project[] = [
+  {
+    name: "찍먹",
+    englishName: "Jjikmeok",
+    period: "2026.03 — 2026.07",
+    role: "Backend · Personalization · Infrastructure",
+    headline: "취향 데이터를 실제 추천 경험으로 연결했습니다.",
+    summary:
+      "관심 주제·선호 분위기·활동 지역을 바탕으로 새로운 취미를 탐색하는 서비스입니다. Spring Boot API 개발부터 추천 로직 고도화, 배포 환경 구성까지 담당했습니다.",
+    contribution: [
+      "주제·지역·선호 태그를 조합한 사용자별 맞춤 활동 API 설계",
+      "태그 중복 점수 기반 추천을 벡터 유사도 방식으로 고도화",
+      "요청 경로의 userId 대신 인증 주체를 사용해 타 사용자 데이터 조회 차단",
+      "Docker·GitHub Actions 기반 배포 환경과 Redis 설정 구성",
+    ],
+    decisions: [
+      "추천 결과의 설명 가능성을 유지하면서 유사 취향을 더 세밀하게 반영",
+      "기능 구현과 함께 인증 경계와 운영 환경까지 하나의 흐름으로 관리",
+    ],
+    stack: ["Java", "Spring Boot", "JPA", "Redis", "Docker", "GitHub Actions", "AWS · OCI"],
+    github: "https://github.com/JJICK-MEOK/Server",
+    service: "https://jjick-meok.vercel.app/",
+    featured: true,
+    accent: "lime",
+  },
+  {
+    name: "속삭편지",
+    englishName: "Soksak Letter",
+    period: "2025.11 — 2026.02",
+    role: "Backend · Matching · Reporting",
+    headline: "복잡한 매칭 규칙과 리포트 생성을 안정적인 도메인 로직으로 풀었습니다.",
+    summary:
+      "오늘의 질문과 익명 편지 교환으로 자기 성찰과 진정성 있는 연결을 돕는 서비스입니다. 8인 팀의 백엔드 개발자 3인 중 한 명으로 API·DB·운영 기능을 개발했습니다.",
+    contribution: [
+      "친구·차단·기존 세션·최대 세션 수를 반영한 매칭 후보 제외 규칙 구현",
+      "관심사 변경 시 매칭 풀을 동기화하고 세션 상태 전이 로직 보완",
+      "주간 리포트 생성·조회 기능과 중복 생성 예외 흐름 개선",
+      "공통 응답·검증 미들웨어·Swagger를 적용해 API 계약 일관성 강화",
+    ],
+    decisions: [
+      "매칭을 단순 랜덤 조회가 아닌 명시적인 제외 조건과 상태 모델로 관리",
+      "리포트가 없는 정상 상태와 실제 장애를 구분해 클라이언트 예외 처리 단순화",
+    ],
+    stack: ["Node.js", "Express", "Prisma", "MySQL", "Redis", "JWT", "Docker · Nginx"],
+    award: "UMC 데모데이 우수상",
+    github: "https://github.com/soksak-letter/soksak-Server",
+    service: "https://www.soksak-letter.com/",
+    featured: true,
+    accent: "cyan",
+  },
+  {
+    name: "MoniFit",
+    period: "2025.12 — 2026.02",
+    role: "Backend · CI/CD · Server Operations",
+    headline: "개발자의 코드를 사용자가 만나는 서버까지 전달했습니다.",
+    summary:
+      "예산과 지출 데이터를 시각화해 건강한 소비 습관을 돕는 서비스입니다. 백엔드 팀에서 CI/CD와 서버 운영 환경을 전담하고 인증 흐름을 함께 보완했습니다.",
+    contribution: [
+      "GitHub Actions에서 테스트·이미지 빌드·배포로 이어지는 파이프라인 구성",
+      "Docker Compose로 애플리케이션 실행 환경을 재현 가능하게 표준화",
+      "Caddy를 도입해 HTTP에서 HTTPS 운영 환경으로 전환",
+      "Kakao OAuth 경로와 JWT 필터 예외 조건을 조정해 인증 흐름 안정화",
+    ],
+    decisions: [
+      "환경 차이로 생기는 배포 실패를 줄이기 위해 실행 단위를 컨테이너로 통일",
+      "배포 자동화뿐 아니라 테스트 로그와 리포트까지 남겨 실패 원인 추적성 확보",
+    ],
+    stack: ["Java 17", "Spring Boot", "Spring Security", "Docker", "GitHub Actions", "Caddy", "AWS"],
+    github: "https://github.com/Leets-Official/MoniFit-BE",
+    featured: true,
+    accent: "violet",
+  },
+  {
+    name: "SINO",
+    period: "2025.12",
+    role: "Backend · API · Data Modeling",
+    headline: "짧은 해커톤에서도 API 계약과 데이터 흐름을 끝까지 완성했습니다.",
+    summary:
+      "감정 기록을 Signal과 Noise로 분류하고 리포트로 돌아보는 서비스입니다. 게시물·북마크·분류 조회·리포트 API와 Prisma 스키마를 구현했습니다.",
+    contribution: [
+      "Signal·Noise별 조회와 게시물 삭제·북마크 토글 API 구현",
+      "리포트 및 Noise→Signal 전환 API와 Swagger 문서 정비",
+    ],
+    decisions: ["공통 응답 형식과 인증 미들웨어를 적용해 단기 협업의 통합 비용 절감"],
+    stack: ["Node.js", "Express", "Prisma", "MySQL", "Swagger"],
+    award: "UMC 장기 해커톤 우수상",
+    github: "https://github.com/UMC-SINO/SINO-Server",
+    accent: "amber",
+  },
+];
+
+export const CAREER_HIGHLIGHTS = [
+  {
+    year: "2026",
+    title: "추천과 운영을 함께 설계하다",
+    description:
+      "찍먹에서 개인화 추천 로직을 고도화하고 Docker·Redis·클라우드 배포 환경을 연결했습니다.",
+  },
+  {
+    year: "2025 — 2026",
+    title: "팀 서비스의 백엔드를 반복해서 완주하다",
+    description:
+      "UMC·Leets·잇타에서 Node.js와 Spring Boot 프로젝트를 수행하며 API, 데이터, 인증, CI/CD를 경험했습니다.",
+  },
+  {
+    year: "2024 — 2025",
+    title: "데이터 기본기에서 협업 개발로",
+    description:
+      "C 언어로 프로그래밍을 시작해 SQLD를 취득하고 컴퓨터공학과로 전과한 뒤, 첫 팀 프로젝트와 해커톤 우승을 경험했습니다.",
+  },
+];
+
+export const AWARDS = [
+  { title: "우수상", organization: "UMC 데모데이 · 속삭편지", year: "2026" },
+  { title: "우수상", organization: "UMC 장기 해커톤 · SINO", year: "2025" },
+  { title: "1위", organization: "CodeIn 교내 해커톤", year: "2025" },
+  { title: "SQLD", organization: "한국데이터산업진흥원", year: "2024" },
+];
