@@ -12,14 +12,12 @@ function myPullsUrl(project: Project) {
   return `${project.github}/pulls?q=is%3Apr+author%3Auser040131`;
 }
 
-const FEATURED = PROJECTS.filter((project) => project.featured);
-
 // shortcut: regex tag/entity stripping is enough for a two-line teaser, swap for a parser if excerpts get longer
 function excerpt(html: string) {
   return String(html ?? "").replace(/<[^>]*>/g, " ").replace(/&[a-z#0-9]+;/gi, " ").replace(/\s+/g, " ").trim().slice(0, 140);
 }
 
-// Each skill row links to the featured projects whose stack lists it (1-based, matches #project-N).
+// Each skill row links to the projects whose stack lists it (1-based, matches #project-N).
 function SkillLine({ name, detail, projects }: { name: string; detail: string; projects: number[] }) {
   return (
     <div className="skill-line">
@@ -27,7 +25,7 @@ function SkillLine({ name, detail, projects }: { name: string; detail: string; p
       <span>{detail}</span>
       <p>
         {projects.map((n) => (
-          <a key={n} href={`#project-${n}`}>{FEATURED[n - 1].name}</a>
+          <a key={n} href={`#project-${n}`}>{PROJECTS[n - 1].name}</a>
         ))}
       </p>
     </div>
@@ -125,8 +123,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export default async function HomePage() {
   const posts = await fetchVelogPosts(3);
-  const featuredProjects = FEATURED;
-  const otherProjects = PROJECTS.filter((project) => !project.featured);
 
   return (
     <>
@@ -157,7 +153,8 @@ export default async function HomePage() {
         <aside className="hero-summary liquid-glass" aria-labelledby="hero-summary-title">
           <h2 id="hero-summary-title">대표 프로젝트</h2>
           <ol>
-            {featuredProjects.map((project, index) => (
+            {/* The panel highlights the first two projects in PROJECTS (찍먹, 속삭편지); the section below shows all of them. */}
+            {PROJECTS.slice(0, 2).map((project, index) => (
               <li key={project.name}>
                 <a href={`#project-${index + 1}`}>
                   <strong>{project.name}</strong>
@@ -189,34 +186,11 @@ export default async function HomePage() {
             description="실제 저장소의 구현과 병합 이력을 바탕으로 정리한 대표 백엔드 프로젝트입니다."
           />
           <div className="project-list">
-            {featuredProjects.map((project, index) => (
+            {PROJECTS.map((project, index) => (
               <ProjectCard key={project.name} project={project} index={index} />
             ))}
           </div>
 
-          <div className="compact-projects">
-            <div>
-              <h3>빠른 실행에서도 지킨 기본기</h3>
-            </div>
-            {otherProjects.map((project) => (
-              <article className="liquid-glass liquid-glass--frost" key={project.name}>
-                <div>
-                  <span>{project.period}</span>
-                  <h4>{project.name}</h4>
-                  <p>{project.headline}</p>
-                </div>
-                <div className="compact-project-meta">
-                  {project.award && <b>{project.award}</b>}
-                  <a href={myPullsUrl(project)} target="_blank" rel="noreferrer" aria-label={`${project.name} 내 PR`}>
-                    내 PR <ArrowIcon />
-                  </a>
-                  <a href={project.github} target="_blank" rel="noreferrer" aria-label={`${project.name} 저장소`}>
-                    저장소 <ArrowIcon />
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -230,11 +204,11 @@ export default async function HomePage() {
           <article className="capability-primary liquid-glass liquid-glass--frost">
             <h3>Backend</h3>
             <SkillLine name="Java · Spring Boot" detail="REST API, JPA, Security, 계층형 아키텍처" projects={[1, 3]} />
-            <SkillLine name="Node.js · Express" detail="Prisma, 미들웨어, 세션·매칭 도메인" projects={[2]} />
+            <SkillLine name="Node.js · Express" detail="Prisma, 미들웨어, 세션·매칭 도메인" projects={[2, 4]} />
           </article>
           <article className="liquid-glass liquid-glass--frost">
             <h3>Database</h3>
-            <SkillLine name="MySQL · PostgreSQL" detail="관계 모델링, 조회·집계, 무결성" projects={[2]} />
+            <SkillLine name="MySQL · PostgreSQL" detail="관계 모델링, 조회·집계, 무결성" projects={[2, 4]} />
             <SkillLine name="Redis" detail="매칭 풀, 캐시, 운영 설정" projects={[1, 2]} />
           </article>
           <article className="liquid-glass liquid-glass--frost">

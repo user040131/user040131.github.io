@@ -223,7 +223,7 @@ p, li { text-wrap: pretty; }
 .tag-list li { padding: 4px var(--space-2); border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--ink-muted); font: var(--type-caption); }
 .project-links { flex: none; display: flex; align-items: center; gap: var(--space-4); }
 .project-links > span { color: var(--ink-muted); font: var(--type-caption); }
-.project-links a, .compact-project-meta a, .post-grid a > p:last-child {
+.project-links a, .post-grid a > p:last-child {
   min-width: 44px;
   min-height: 44px;
   display: inline-flex;
@@ -232,16 +232,7 @@ p, li { text-wrap: pretty; }
   color: var(--accent);
   font: var(--type-label);
 }
-@media (hover: hover) { .project-links a:hover, .compact-project-meta a:hover, .skill-line a:hover { text-decoration: underline; text-underline-offset: 4px; } }
-
-.compact-projects { margin-top: var(--space-10); }
-.compact-projects h3 { margin: 0 0 var(--space-4); font: var(--type-title); }
-.compact-projects article { padding: var(--space-6); display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); border-radius: var(--radius-md); }
-.compact-projects article > div > span { color: var(--ink-muted); font: var(--type-mono); }
-.compact-projects article h4 { margin: var(--space-2) 0 0; font: var(--type-title); }
-.compact-projects article p { margin: 0; color: var(--ink-muted); }
-.compact-project-meta { flex: none; display: flex; align-items: center; gap: var(--space-4); }
-.compact-project-meta b { font: var(--type-label); }
+@media (hover: hover) { .project-links a:hover, .skill-line a:hover { text-decoration: underline; text-underline-offset: 4px; } }
 
 .capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
 .capability-grid article { padding: var(--space-6); border-radius: var(--radius-md); }
@@ -313,8 +304,6 @@ p, li { text-wrap: pretty; }
   .award-chip { display: inline-block; margin-top: var(--space-4); }
   .project-footer { flex-direction: column; align-items: stretch; }
   .project-links { justify-content: flex-end; }
-  .compact-projects article { display: block; }
-  .compact-project-meta { margin-top: var(--space-2); justify-content: space-between; }
   .timeline article { grid-template-columns: 1fr; gap: var(--space-2); }
   .footer-inner { padding-block: var(--space-6); flex-direction: column; text-align: center; gap: var(--space-2); }
 }
