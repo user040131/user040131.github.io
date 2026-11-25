@@ -11,8 +11,8 @@ export type Project = {
   award?: string;
   github: string;
   service?: string;
+  serviceNote?: string;
   featured?: boolean;
-  accent: "lime" | "cyan" | "violet" | "amber";
 };
 
 export const PROJECTS: Project[] = [
@@ -23,7 +23,7 @@ export const PROJECTS: Project[] = [
     role: "Backend · Personalization · Infrastructure",
     headline: "취향 데이터를 실제 추천 경험으로 연결했습니다.",
     summary:
-      "관심 주제·선호 분위기·활동 지역을 바탕으로 새로운 취미를 탐색하는 서비스입니다. Spring Boot API 개발부터 추천 로직 고도화, 배포 환경 구성까지 담당했습니다.",
+      "관심 주제·선호 분위기·활동 지역을 바탕으로 새로운 취미를 탐색하는 서비스입니다. 백엔드 개발자 3인 중 한 명으로 Spring Boot API 개발부터 추천 로직 고도화, 배포 환경 구성까지 담당했습니다.",
     contribution: [
       "주제·지역·선호 태그를 조합한 사용자별 맞춤 활동 API 설계",
       "태그 중복 점수 기반 추천을 벡터 유사도 방식으로 고도화",
@@ -38,7 +38,6 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/JJICK-MEOK/Server",
     service: "https://jjick-meok.vercel.app/",
     featured: true,
-    accent: "lime",
   },
   {
     name: "속삭편지",
@@ -63,7 +62,6 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/soksak-letter/soksak-Server",
     service: "https://www.soksak-letter.com/",
     featured: true,
-    accent: "cyan",
   },
   {
     name: "MoniFit",
@@ -71,7 +69,7 @@ export const PROJECTS: Project[] = [
     role: "Backend · CI/CD · Server Operations",
     headline: "개발자의 코드를 사용자가 만나는 서버까지 전달했습니다.",
     summary:
-      "예산과 지출 데이터를 시각화해 건강한 소비 습관을 돕는 서비스입니다. 백엔드 팀에서 CI/CD와 서버 운영 환경을 전담하고 인증 흐름을 함께 보완했습니다.",
+      "예산과 지출 데이터를 시각화해 건강한 소비 습관을 돕는 서비스입니다. 백엔드 3인 팀에서 CI/CD와 서버 운영 환경을 전담하고 인증 흐름을 함께 보완했습니다.",
     contribution: [
       "GitHub Actions에서 테스트·이미지 빌드·배포로 이어지는 파이프라인 구성",
       "Docker Compose로 애플리케이션 실행 환경을 재현 가능하게 표준화",
@@ -84,8 +82,8 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Java 17", "Spring Boot", "Spring Security", "Docker", "GitHub Actions", "Caddy", "AWS"],
     github: "https://github.com/Leets-Official/MoniFit-BE",
+    serviceNote: "서버 운영 종료",
     featured: true,
-    accent: "violet",
   },
   {
     name: "SINO",
@@ -93,7 +91,7 @@ export const PROJECTS: Project[] = [
     role: "Backend · API · Data Modeling",
     headline: "짧은 해커톤에서도 API 계약과 데이터 흐름을 끝까지 완성했습니다.",
     summary:
-      "감정 기록을 Signal과 Noise로 분류하고 리포트로 돌아보는 서비스입니다. 게시물·북마크·분류 조회·리포트 API와 Prisma 스키마를 구현했습니다.",
+      "감정 기록을 Signal과 Noise로 분류하고 리포트로 돌아보는 서비스입니다. 백엔드 개발자 3인 중 한 명으로 게시물·북마크·분류 조회·리포트 API와 Prisma 스키마를 구현했습니다.",
     contribution: [
       "Signal·Noise별 조회와 게시물 삭제·북마크 토글 API 구현",
       "리포트 및 Noise→Signal 전환 API와 Swagger 문서 정비",
@@ -102,34 +100,63 @@ export const PROJECTS: Project[] = [
     stack: ["Node.js", "Express", "Prisma", "MySQL", "Swagger"],
     award: "UMC 장기 해커톤 우수상",
     github: "https://github.com/UMC-SINO/SINO-Server",
-    accent: "amber",
   },
 ];
 
 export const CAREER_HIGHLIGHTS = [
   {
-    year: "2026",
-    title: "추천과 운영을 함께 설계하다",
-    description:
-      "찍먹에서 개인화 추천 로직을 고도화하고 Docker·Redis·클라우드 배포 환경을 연결했습니다.",
+    period: "2026 상반기",
+    items: [
+      "연합 동아리 It's Time 9기 참여",
+      "It's Time에서 찍먹 프로젝트 Spring Boot 및 AWS/OCI 파트 참여",
+    ],
   },
   {
-    year: "2025 — 2026",
-    title: "팀 서비스의 백엔드를 반복해서 완주하다",
-    description:
-      "UMC·Leets·잇타에서 Node.js와 Spring Boot 프로젝트를 수행하며 API, 데이터, 인증, CI/CD를 경험했습니다.",
+    period: "2025 하반기",
+    items: [
+      "교내 동아리 Leets 및 연합 동아리 UMC 참여",
+      "UMC 장기 해커톤 SINO에 Node.js 파트 API 개발로 참여, 우수상 수상",
+      "UMC 데모데이 속삭편지에 Node.js 파트 API 개발로 참여, 우수상 수상",
+      "UMC Node.js 파트 수료",
+      "Leets 최종 프로젝트 MoniFit Spring Boot 파트 참여",
+      "Leets Server 파트 수료",
+    ],
   },
   {
-    year: "2024 — 2025",
-    title: "데이터 기본기에서 협업 개발로",
-    description:
-      "C 언어로 프로그래밍을 시작해 SQLD를 취득하고 컴퓨터공학과로 전과한 뒤, 첫 팀 프로젝트와 해커톤 우승을 경험했습니다.",
+    period: "2025 상반기",
+    items: [
+      "교내 동아리 CodeIn 참여, 동아리 해커톤 1등상 수상",
+      "CodeIn X 밝은눈안과 협업 TF 프로젝트 참여",
+    ],
   },
 ];
 
 export const AWARDS = [
-  { title: "우수상", organization: "UMC 데모데이 · 속삭편지", year: "2026" },
+  { title: "우수상", organization: "UMC 데모데이 · 속삭편지", year: "2025" },
   { title: "우수상", organization: "UMC 장기 해커톤 · SINO", year: "2025" },
-  { title: "1위", organization: "CodeIn 교내 해커톤", year: "2025" },
+  { title: "1등상", organization: "CodeIn 교내 해커톤", year: "2025" },
   { title: "SQLD", organization: "한국데이터산업진흥원", year: "2024" },
+];
+
+// "결과로 남은 성장" panel: what each half-year left behind, award or not. One entry per period, so results from the same period stay together.
+export const MILESTONES = [
+  {
+    period: "2026 상반기",
+    items: [{ title: "찍먹", detail: "It's Time 9기 · Spring Boot API와 추천 로직 개발, AWS/OCI 배포 환경 구성" }],
+  },
+  {
+    period: "2025 하반기",
+    items: [
+      { title: "속삭편지", detail: "UMC 데모데이 우수상 · Node.js 파트 API 개발" },
+      { title: "SINO", detail: "UMC 장기 해커톤 우수상 · Node.js 파트 API 개발" },
+    ],
+  },
+  {
+    period: "2025 상반기",
+    items: [{ title: "CodeIn 해커톤", detail: "교내 동아리 해커톤 1등상" }],
+  },
+  {
+    period: "2024",
+    items: [{ title: "SQLD", detail: "한국데이터산업진흥원" }],
+  },
 ];

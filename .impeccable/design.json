@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-26T00:00:00+09:00",
+  "title": "Design System: 박승주 백엔드 포트폴리오",
+  "extensions": {
+    "colorMeta": {
+      "link-blue": {
+        "role": "primary",
+        "displayName": "링크 블루",
+        "canonical": "#2457f5",
+        "tonalRamp": [
+          "oklch(20% 0.09 264)",
+          "oklch(30% 0.14 264)",
+          "oklch(40% 0.19 264)",
+          "oklch(51% 0.23 264)",
+          "oklch(62% 0.18 264)",
+          "oklch(73% 0.13 264)",
+          "oklch(84% 0.08 264)",
+          "oklch(94% 0.03 264)"
+        ]
+      },
+      "link-blue-dark": {
+        "role": "primary",
+        "displayName": "링크 블루 (다크)",
+        "canonical": "#6b8cff",
+        "tonalRamp": [
+          "oklch(22% 0.08 268)",
+          "oklch(33% 0.12 268)",
+          "oklch(44% 0.16 268)",
+          "oklch(55% 0.18 268)",
+          "oklch(67% 0.16 268)",
+          "oklch(77% 0.11 268)",
+          "oklch(87% 0.06 268)",
+          "oklch(95% 0.02 268)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "잉크",
+        "canonical": "#111111",
+        "tonalRamp": [
+          "oklch(18% 0 0)",
+          "oklch(29% 0 0)",
+          "oklch(40% 0 0)",
+          "oklch(51% 0 0)",
+          "oklch(62% 0 0)",
+          "oklch(73% 0 0)",
+          "oklch(84% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "흐린 잉크",
+        "canonical": "#5c5c61",
+        "tonalRamp": [
+          "oklch(18% 0.004 286)",
+          "oklch(29% 0.005 286)",
+          "oklch(40% 0.006 286)",
+          "oklch(48% 0.007 286)",
+          "oklch(60% 0.006 286)",
+          "oklch(72% 0.005 286)",
+          "oklch(84% 0.004 286)",
+          "oklch(95% 0.002 286)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "종이",
+        "canonical": "#f4f4f5",
+        "tonalRamp": [
+          "oklch(16% 0.002 286)",
+          "oklch(28% 0.002 286)",
+          "oklch(40% 0.002 286)",
+          "oklch(52% 0.002 286)",
+          "oklch(64% 0.002 286)",
+          "oklch(76% 0.002 286)",
+          "oklch(88% 0.002 286)",
+          "oklch(96% 0.001 286)"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "종이 (다크)",
+        "canonical": "#0b0b0c"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "표면",
+        "canonical": "#ffffff"
+      },
+      "surface-dark": {
+        "role": "neutral",
+        "displayName": "표면 (다크)",
+        "canonical": "#1a1a1c"
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "잉크 (다크)",
+        "canonical": "#f5f5f7"
+      },
+      "ink-muted-dark": {
+        "role": "neutral",
+        "displayName": "흐린 잉크 (다크)",
+        "canonical": "#a1a1a8"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "선",
+        "canonical": "rgba(17, 17, 17, 0.1)"
+      },
+      "line-dark": {
+        "role": "neutral",
+        "displayName": "선 (다크)",
+        "canonical": "rgba(255, 255, 255, 0.12)"
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "진한 선",
+        "canonical": "#8a8a8f"
+      },
+      "line-strong-dark": {
+        "role": "neutral",
+        "displayName": "진한 선 (다크)",
+        "canonical": "#77777d"
+      },
+      "glass-tint": {
+        "role": "neutral",
+        "displayName": "유리 틴트",
+        "canonical": "rgba(255, 255, 255, 0.06)"
+      },
+      "glass-tint-dark": {
+        "role": "neutral",
+        "displayName": "유리 틴트 (다크)",
+        "canonical": "rgba(255, 255, 255, 0.03)"
+      },
+      "glass-frost": {
+        "role": "neutral",
+        "displayName": "유리 프로스트",
+        "canonical": "rgba(255, 255, 255, 0.65)"
+      },
+      "glass-frost-dark": {
+        "role": "neutral",
+        "displayName": "유리 프로스트 (다크)",
+        "canonical": "rgba(16, 16, 20, 0.6)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "히어로 제목 한 곳. 600px 이하에서는 Display compact(2.25rem/2.5rem)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "섹션 제목과 프로젝트 이름."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "카드 제목, 프로젝트 한 줄 요약, 반기 라벨."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "본문. 카드 안 설명은 680px 폭으로 제한한다."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "버튼, 내비게이션, 링크, 소제목."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "태그, 보조 설명, 푸터."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "프로젝트 기간."
+      },
+      "display-compact": {
+        "displayName": "Display compact",
+        "purpose": "600px 이하의 히어로 제목."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glass-shadow",
+        "value": "0 14px 34px rgba(17, 17, 17, 0.12), 0 2px 6px rgba(17, 17, 17, 0.06)",
+        "purpose": "유리가 배경 위에 떠 있다는 것을 알린다 (라이트)."
+      },
+      {
+        "name": "glass-shadow-dark",
+        "value": "0 16px 40px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3)",
+        "purpose": "유리가 배경 위에 떠 있다는 것을 알린다 (다크)."
+      },
+      {
+        "name": "glass-inner",
+        "value": "inset 7px 7px 10px -7px rgba(255, 255, 255, 0.9), inset -7px -7px 10px -7px rgba(255, 255, 255, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.25), inset -12px -12px 14px -14px rgba(17, 17, 17, 0.18)",
+        "purpose": "테두리 반사: 왼쪽 위 글레어, 오른쪽 아래 반사와 그늘 (라이트)."
+      },
+      {
+        "name": "glass-inner-dark",
+        "value": "inset 7px 7px 10px -7px rgba(255, 255, 255, 0.4), inset -7px -7px 10px -7px rgba(255, 255, 255, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.07), inset -12px -12px 14px -14px rgba(0, 0, 0, 0.5)",
+        "purpose": "테두리 반사 (다크)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": "0.2s ease",
+        "purpose": "버튼, 내비게이션, 글 카드의 transform · background-color · border-color 전환."
+      },
+      {
+        "name": "press",
+        "value": "scale(0.97)",
+        "purpose": "버튼과 내비게이션 링크를 누를 때의 눌림. 동작 줄이기 설정에서는 없다."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "mobile",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "한 화면에서 가장 중요한 행동 하나.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">대표 프로젝트 보기 <svg class=\"ds-icon\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M8 3v10M3.5 8.5 8 13l4.5-4.5\"/></svg></a>",
+      "css": ".ds-btn { min-height: 48px; padding: 0 16px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--ink); border-radius: var(--radius-sm); font: 500 0.875rem/1.25rem var(--font-sans); text-decoration: none; transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; } .ds-btn:active { transform: scale(0.97); } .ds-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; } .ds-btn-primary { background: var(--ink); color: var(--surface); } .ds-btn-primary:hover { background: var(--ink-muted); border-color: var(--ink-muted); } .ds-icon { flex: none; width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "기본 버튼 옆의 보조 행동.",
+      "html": "<a class=\"ds-btn2\" href=\"#\">GitHub 프로필 <svg class=\"ds-icon2\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M4.5 11.5l7-7M5.5 4.5h6v6\"/></svg></a>",
+      "css": ".ds-btn2 { min-height: 48px; padding: 0 16px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); color: var(--ink); font: 500 0.875rem/1.25rem var(--font-sans); text-decoration: none; transition: transform 0.2s ease, border-color 0.2s ease; } .ds-btn2:hover { border-color: var(--ink); } .ds-btn2:active { transform: scale(0.97); } .ds-btn2:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; } .ds-icon2 { flex: none; width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Tag Chip",
+      "kind": "chip",
+      "refersTo": "chip-tag",
+      "description": "기술 스택 표시. 누를 수 없다.",
+      "html": "<ul class=\"ds-tags\"><li>Spring Boot</li><li>Redis</li><li>Docker</li></ul>",
+      "css": ".ds-tags { margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; list-style: none; } .ds-tags li { padding: 4px 8px; border: 1px solid var(--line); border-radius: var(--radius-sm); color: var(--ink-muted); font: 400 0.8125rem/1.125rem var(--font-sans); }"
+    },
+    {
+      "name": "Award Chip",
+      "kind": "chip",
+      "refersTo": "chip-award",
+      "description": "프로젝트 카드의 수상 표시.",
+      "html": "<span class=\"ds-award\">UMC 데모데이 우수상</span>",
+      "css": ".ds-award { display: inline-block; padding: 8px 16px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); color: var(--ink); font: 500 0.875rem/1.25rem var(--font-sans); }"
+    },
+    {
+      "name": "Glass Panel",
+      "kind": "card",
+      "refersTo": "glass-panel",
+      "description": "맑은 리퀴드 글래스. 히어로 요약, 수상 스트립, 결과로 남은 성장, 연락 섹션.",
+      "html": "<aside class=\"ds-glass\"><h3>결과로 남은 성장</h3><span>2025 하반기</span><strong>속삭편지</strong><p>UMC 데모데이 우수상 · Node.js 파트 API 개발</p></aside>",
+      "css": ".ds-glass { position: relative; padding: 24px; border-radius: var(--radius-lg); background: var(--glass-tint); box-shadow: var(--glass-shadow), var(--glass-inner); -webkit-backdrop-filter: blur(4px) saturate(150%); backdrop-filter: blur(4px) saturate(150%); color: var(--ink); } .ds-glass::after { content: \"\"; position: absolute; inset: 0; padding: 1.5px; border-radius: inherit; pointer-events: none; background: linear-gradient(135deg, var(--glass-spec), transparent 38%, transparent 62%, var(--glass-spec-dim)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; } .ds-glass h3 { margin: 0 0 16px; font: 600 1.25rem/1.625rem var(--font-sans); } .ds-glass span { display: block; margin-bottom: 8px; font: 400 0.8125rem/1.125rem var(--font-sans); } .ds-glass strong { display: block; font: 600 0.875rem/1.25rem var(--font-sans); } .ds-glass p { margin: 0; font: 400 0.8125rem/1.125rem var(--font-sans); }"
+    },
+    {
+      "name": "Glass Card",
+      "kind": "card",
+      "refersTo": "glass-card",
+      "description": "프로스트 리퀴드 글래스. 흐린 잉크와 링크가 많은 프로젝트·역량·글 카드.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-top\">2026.03 — 2026.07</div><h3>찍먹</h3><p>취향 데이터를 실제 추천 경험으로 연결했습니다.</p><a href=\"#\">저장소</a></article>",
+      "css": ".ds-card { position: relative; padding: 40px; border-radius: var(--radius-md); background: var(--glass-frost); box-shadow: var(--glass-shadow), var(--glass-inner); -webkit-backdrop-filter: blur(4px) saturate(150%); backdrop-filter: blur(4px) saturate(150%); color: var(--ink); } .ds-card::after { content: \"\"; position: absolute; inset: 0; padding: 1.5px; border-radius: inherit; pointer-events: none; background: linear-gradient(135deg, var(--glass-spec), transparent 38%, transparent 62%, var(--glass-spec-dim)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; } .ds-card-top { color: var(--ink-muted); font: 400 0.875rem/1.375rem var(--font-mono); } .ds-card h3 { margin: 16px 0 0; font: 600 1.75rem/2.125rem var(--font-sans); letter-spacing: -0.01em; } .ds-card p { margin: 24px 0 8px; font: 600 1.25rem/1.625rem var(--font-sans); } .ds-card a { min-height: 44px; display: inline-flex; align-items: center; color: var(--accent); font: 500 0.875rem/1.25rem var(--font-sans); text-decoration: none; } .ds-card a:hover { text-decoration: underline; text-underline-offset: 4px; } .ds-card a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "화면 위에 떠 있는 유리 막대. 이 표면만 블러를 가진다.",
+      "html": "<header class=\"ds-nav\"><nav><a href=\"#\">프로젝트</a><a href=\"#\">역량</a><a href=\"#\">성장</a></nav><a class=\"ds-nav-contact\" href=\"#\">이메일 보내기</a></header>",
+      "css": ".ds-nav { position: relative; padding: 6px; display: flex; align-items: center; gap: 2px; border-radius: var(--radius-lg); background: var(--glass-tint); box-shadow: var(--glass-shadow), var(--glass-inner); -webkit-backdrop-filter: blur(12px) saturate(150%); backdrop-filter: blur(12px) saturate(150%); color: var(--ink); } .ds-nav nav { display: flex; gap: 2px; } .ds-nav a { padding: 10px 14px; border-radius: var(--radius-md); color: inherit; font: 500 0.875rem/1.25rem var(--font-sans); text-decoration: none; transition: background-color 0.2s ease, transform 0.2s ease; } .ds-nav a:hover { background: var(--glass-select); } .ds-nav a:active { transform: scale(0.97); } .ds-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; } .ds-nav-contact { margin-left: auto; font-weight: 600; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Glass's System",
+    "overview": "유리가 주인공인 체계다. 화면은 차분하고 정밀하다. 색은 무채색 잉크와 파랑 하나뿐이고, 나머지 표정은 전부 유리가 만든다. 유리는 장식으로 흐려 놓은 판이 아니라 실제 재질처럼 행동한다. 가장자리에서 배경을 휘게 하고, 테두리에서 빛을 받고, 가운데는 뒤를 그대로 비춘다.\n\n유리가 유리로 보이려면 뒤에 휠 것이 있어야 한다. 그래서 배경은 색 글로우 위에 선명한 격자와 원을 얹은 도면 같은 층이고, 이 층은 뷰포트에 고정된다. 스크롤하면 유리 패널이 그 위를 지나가며 선이 모서리에서 꺾인다.\n\n이 체계가 거절하는 모습은 네 가지로 확정되어 있다. 굴절 없이 반투명과 블러만 있는 유리, 두꺼운 흰 광택 띠로 두른 테두리, 가운데까지 휘거나 흐려지는 유리, 프로젝트마다 다른 강조색을 쓴 카드.",
+    "keyCharacteristics": [
+      "무채색 잉크 + 링크 블루 하나. 그 밖의 색은 배경 글로우에만 있다.",
+      "유리는 가장자리 16px 띠에서만 굴절하고, 그 안쪽은 손대지 않는다.",
+      "윤곽은 선이 아니라 빛으로 그린다. 왼쪽 위에서 들어오는 스펙큘러와 오른쪽 아래의 약한 반사.",
+      "라이트와 다크는 운영체제 설정을 따르고, 같은 토큰 이름으로 양쪽 값을 가진다.",
+      "컴포넌트는 단단하고 분명하다. 누를 수 있는 것은 한눈에 보인다."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "강조색은 링크 블루 하나다. 프로젝트나 섹션마다 다른 강조색을 주지 않는다.",
+        "section": "colors"
+      },
+      {
+        "name": "The Colorless Glass Rule",
+        "body": "유리 틴트에는 색을 넣지 않는다. 유리에 보이는 색은 전부 뒤의 배경에서 온다.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink-On-Clear Rule",
+        "body": "맑은 유리와 페이지 바탕 위의 글자는 잉크만 쓴다. 흐린 잉크와 링크 블루는 프로스트나 불투명 표면 위에서만 쓴다.",
+        "section": "colors"
+      },
+      {
+        "name": "The Role-Not-Size Rule",
+        "body": "글자 크기는 `--type-*` 역할 토큰으로만 쓴다. 값은 rem이라 읽는 사람의 브라우저 글자 크기 설정을 따른다. 기본 16px에서 13 · 14 · 16 · 20 · 28 · 48px(모바일 제목 36px)이다.",
+        "section": "typography"
+      },
+      {
+        "name": "The Keep-All Rule",
+        "body": "한글은 단어 단위로 줄바꿈한다(`word-break: keep-all`). 제목은 `text-wrap: balance`, 본문은 `text-wrap: pretty`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Edge-Only Rule",
+        "body": "굴절, 반사, 글레어는 가장자리에만 있다. 패널 가운데는 배경을 그대로 비춘다.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Backdrop-First Rule",
+        "body": "유리를 손보기 전에 배경을 본다. 유리가 밋밋하면 블러나 불투명도를 올리지 말고 배경에 휠 것이 있는지 확인한다.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** 유리 가장자리 16px 안에서만 배경을 휘게 한다.",
+      "**Do** 윤곽을 스펙큘러 림과 테두리 반사로 그린다.",
+      "**Do** 유리 뒤에 선명한 디테일(격자, 원)이 있는 배경을 둔다.",
+      "**Do** 색은 토큰으로만 쓴다. 라이트와 다크 값을 함께 둔다.",
+      "**Do** 글이 많은 카드에는 프로스트 유리를 쓴다."
+    ],
+    "donts": [
+      "**Don't** 반투명과 블러만으로 유리를 만들지 않는다.",
+      "**Don't** 두꺼운 흰 광택 띠로 테두리를 두르지 않는다.",
+      "**Don't** 패널 가운데까지 휘거나 흐리게 하지 않는다. 헤더만 예외다.",
+      "**Don't** 프로젝트나 카드마다 다른 강조색을 쓰지 않는다.",
+      "**Don't** 유리 안에 유리를 겹치지 않는다. 칩과 버튼은 유리가 아니다.",
+      "**Don't** 맑은 유리 위에 흐린 잉크나 링크 블루 글자를 올리지 않는다."
+    ]
+  }
+}

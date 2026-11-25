@@ -42,6 +42,8 @@ export async function fetchVelogPosts(limit = 2): Promise<VelogPost[]> {
     const res = await fetch(RSS_URL, {
       // App Router 서버 컴포넌트에서 1시간마다 재검증
       next: { revalidate: 60 * 60 },
+      // 피드가 응답 없이 멈춰도 빌드가 기다리지 않게 한다 (catch에서 빈 목록으로 처리)
+      signal: AbortSignal.timeout(8000),
     });
 
     if (!res.ok) {
@@ -60,7 +62,10 @@ export async function fetchVelogPosts(limit = 2): Promise<VelogPost[]> {
     const items = parsed.rss?.channel?.item;
     if (!items) return [];
 
-    const itemArray: RssItemRaw[] = Array.isArray(items) ? items : [items];
+    // 피드는 외부 입력이다. 날짜를 못 읽으면 페이지의 날짜 포맷이 빌드를 깨고, http(s)가 아닌 링크는 href에 넣지 않는다.
+    const itemArray: RssItemRaw[] = (Array.isArray(items) ? items : [items]).filter(
+      (item) => item?.title != null && /^https?:\/\//.test(String(item.link)) && Number.isFinite(new Date(item.pubDate).getTime()),
+    );
 
     // pubDate 기준 최신순 정렬
     itemArray.sort((a, b) => {
@@ -81,10 +86,11 @@ export async function fetchVelogPosts(limit = 2): Promise<VelogPost[]> {
           : [];
 
       return {
-        title: item.title,
-        link: item.link,
+        // 숫자만 있는 제목은 XML 파서가 number로 준다
+        title: String(item.title),
+        link: String(item.link),
         pubDate: item.pubDate,
-        description: item.description,
+        description: String(item.description ?? ''),
         tags,
       };
     });
