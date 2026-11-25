@@ -12,7 +12,6 @@ export type Project = {
   github: string;
   service?: string;
   serviceNote?: string;
-  featured?: boolean;
 };
 
 export const PROJECTS: Project[] = [
@@ -37,7 +36,6 @@ export const PROJECTS: Project[] = [
     stack: ["Java", "Spring Boot", "JPA", "Redis", "Docker", "GitHub Actions", "AWS · OCI"],
     github: "https://github.com/JJICK-MEOK/Server",
     service: "https://jjick-meok.vercel.app/",
-    featured: true,
   },
   {
     name: "속삭편지",
@@ -61,7 +59,6 @@ export const PROJECTS: Project[] = [
     award: "UMC 데모데이 우수상",
     github: "https://github.com/soksak-letter/soksak-Server",
     service: "https://www.soksak-letter.com/",
-    featured: true,
   },
   {
     name: "MoniFit",
@@ -83,7 +80,6 @@ export const PROJECTS: Project[] = [
     stack: ["Java 17", "Spring Boot", "Spring Security", "Docker", "GitHub Actions", "Caddy", "AWS"],
     github: "https://github.com/Leets-Official/MoniFit-BE",
     serviceNote: "서버 운영 종료",
-    featured: true,
   },
   {
     name: "SINO",
