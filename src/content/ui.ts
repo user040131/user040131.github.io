@@ -31,6 +31,8 @@ const UI_KO = {
   switchLabel: "EN",
   switchAria: "View in English",
   footerLine: "문제를 이해하고 · 근거로 선택하고 · 운영으로 검증합니다.",
+  // Easter egg shown between 01:00 and 05:59 (components/DawnEgg.tsx).
+  dawnMessage: "또 새벽이네요...",
   // Home page. Each hero title line is split where a narrow screen breaks it.
   heroTitle: [["선택지를 ", "설명할 수 있는 개발자,"], ["선택을 결과로 ", "잇는 개발자."]],
   heroDescription: ["Spring Boot와 Node.js로 API와 데이터 흐름을 설계하고,", " Docker·CI/CD·클라우드 환경까지 책임지는 백엔드 개발자 박승주입니다."],
@@ -91,6 +93,7 @@ const UI_EN: typeof UI_KO = {
   switchLabel: "한",
   switchAria: "한국어로 보기",
   footerLine: "Understand the problem · Choose with evidence · Verify in operation.",
+  dawnMessage: "Up late again...",
   heroTitle: [["A developer who can ", "explain the options,"], ["and turn choices ", "into results."]],
   heroDescription: ["I design APIs and data flows with Spring Boot and Node.js,", " and own everything through Docker, CI/CD and the cloud. I'm Seungju Park, a backend developer."],
   heroMeta: "Junior in Computer Engineering at Gachon University · Graduating after military service",
