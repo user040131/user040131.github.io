@@ -1,9 +1,8 @@
 import type { Project } from "@/content/projects";
 import { CONTENT, UI, type Lang } from "@/content/ui";
-import { fetchVelogPosts } from "@/lib/velog";
+import { fetchTistoryPosts, TISTORY_URL } from "@/lib/tistory";
 
 const GITHUB_URL = "https://github.com/user040131";
-const TISTORY_URL = "https://seungjub270.tistory.com/";
 const EMAIL = "seungjub270@gmail.com";
 
 // Team repos: link straight to this author's merged and open PRs so claims can be checked.
@@ -124,7 +123,7 @@ function ProjectCard({ project, index, lang }: { project: Project; index: number
 export default async function Home({ lang }: { lang: Lang }) {
   const t = UI[lang];
   const { AWARDS, CAREER_HIGHLIGHTS, MILESTONES, PROJECTS } = CONTENT[lang];
-  const posts = await fetchVelogPosts(3);
+  const posts = await fetchTistoryPosts(3);
 
   return (
     <>
@@ -269,8 +268,8 @@ export default async function Home({ lang }: { lang: Lang }) {
           />
         {posts.length === 0 ? (
           // Feed unavailable at build time: keep a way to reach the blog.
-          <a className="text-link" href="https://velog.io/@user040131" target="_blank" rel="noreferrer">
-            {t.velogFallback} <ArrowIcon />
+          <a className="text-link" href={TISTORY_URL} target="_blank" rel="noreferrer">
+            {t.blogFallback} <ArrowIcon />
           </a>
         ) : (
           <div className="post-grid">

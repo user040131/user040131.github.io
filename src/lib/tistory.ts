@@ -1,7 +1,7 @@
-// src/lib/velog.ts
+// src/lib/tistory.ts
 import { XMLParser } from 'fast-xml-parser';
 
-export interface VelogPost {
+export interface BlogPost {
   title: string;
   link: string;
   pubDate: string;
@@ -16,7 +16,7 @@ interface RssItemRaw {
   pubDate: string;
   description: string;
 
-  // Velog RSS에서는 태그가 <category> 로 내려옴
+  // Tistory RSS에서는 글의 카테고리가 <category> 로 내려옴 (예: "소프트웨어 설계/DDD")
   // 여러 개면 string[], 하나면 string, 없으면 undefined
   category?: string | string[];
 }
@@ -31,13 +31,12 @@ interface RssRoot {
   };
 }
 
-// 본인 Velog 아이디
-const VELOG_USERNAME = 'user040131';
+// 블로그 주소. 글 목록을 못 불러왔을 때 페이지가 대신 거는 링크이기도 하다.
+export const TISTORY_URL = 'https://seungjub270.tistory.com/';
 
-// Velog v2 RSS 주소
-const RSS_URL = `https://v2.velog.io/rss/${VELOG_USERNAME}`;
+const RSS_URL = `${TISTORY_URL}rss`;
 
-export async function fetchVelogPosts(limit = 2): Promise<VelogPost[]> {
+export async function fetchTistoryPosts(limit = 2): Promise<BlogPost[]> {
   try {
     const res = await fetch(RSS_URL, {
       // App Router 서버 컴포넌트에서 1시간마다 재검증
@@ -47,7 +46,7 @@ export async function fetchVelogPosts(limit = 2): Promise<VelogPost[]> {
     });
 
     if (!res.ok) {
-      console.error('Failed to fetch Velog RSS', res.status, res.statusText);
+      console.error('Failed to fetch Tistory RSS', res.status, res.statusText);
       return [];
     }
 
@@ -95,7 +94,7 @@ export async function fetchVelogPosts(limit = 2): Promise<VelogPost[]> {
       };
     });
   } catch (error) {
-    console.error('Unable to load Velog RSS', error);
+    console.error('Unable to load Tistory RSS', error);
     return [];
   }
 }

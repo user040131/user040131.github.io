@@ -30,10 +30,10 @@ web
 
 현재 있는 것:
 
-- 홈(`/`): 소개, 프로젝트 4개(찍먹, 속삭편지, MoniFit, SINO, 전부 같은 형식의 카드), 역량, 성장(반기별 이력 타임라인 + "결과로 남은 성장" 패널), 수상·자격, Velog 최신 글 3개, 연락처.
+- 홈(`/`): 소개, 프로젝트 4개(찍먹, 속삭편지, MoniFit, SINO, 전부 같은 형식의 카드), 역량, 성장(반기별 이력 타임라인 + "결과로 남은 성장" 패널), 수상·자격, Tistory 최신 글 3개, 연락처.
 - "결과로 남은 성장" 패널은 반기 단위로 묶고, 수상이 없는 결과(찍먹)는 한 일을 적는다. 수상·자격 스트립에는 수상과 자격만 싣는다.
 - 콘텐츠 원본은 `src/content/projects.ts`.
-- Velog RSS 연동(`src/lib/velog.ts`, 아이디 `user040131`). 유지한다.
+- Tistory RSS 연동(`src/lib/tistory.ts`, `seungjub270.tistory.com/rss`). 유지한다.
 
 확정된 추가 요구(미구현):
 
@@ -43,7 +43,7 @@ web
 기술 제약:
 
 - Next.js 16 App Router + Tailwind 4, `output: "export"` 정적 빌드를 GitHub Actions로 GitHub Pages에 배포. 서버 런타임이 없다.
-- 따라서 `revalidate`는 배포 후 동작하지 않고, Velog 글은 `main` 푸시 시점의 빌드 결과로 고정된다. "실시간" 연동은 클라이언트 측 fetch 또는 주기적 재빌드가 필요하다.
+- 따라서 `revalidate`는 배포 후 동작하지 않고, Tistory 글은 `main` 푸시 시점의 빌드 결과로 고정된다. "실시간" 연동은 클라이언트 측 fetch 또는 주기적 재빌드가 필요하다.
 
 미정:
 
@@ -73,7 +73,7 @@ web
   - 2025 하반기: 교내 동아리 Leets와 연합 동아리 UMC 참여. SINO(UMC 장기 해커톤)와 속삭편지(UMC 데모데이)에 Node.js 파트 API 개발로 참여. UMC Node.js 파트 수료. Leets 최종 프로젝트 MoniFit Spring Boot 파트 참여, Leets Server 파트 수료.
   - 2025 상반기: 교내 동아리 CodeIn 참여, CodeIn X 밝은눈안과 협업 TF 프로젝트 참여.
 - 프로젝트 기간은 카드 표기가 맞다: 속삭편지 2025.11 — 2026.02, MoniFit 2025.12 — 2026.02. 이력의 "2025 하반기"는 기수 기준 표기이고 프로젝트는 2026년 2월까지 이어졌다.
-- GitHub `user040131`, Velog `user040131`.
+- GitHub `user040131`, Tistory `seungjub270`.
 - 없는 것(지어내지 말 것): 추천사, 사용자 수·성능 수치, 재직 경력, 프로젝트 스크린샷.
 
 ## Product Principles
