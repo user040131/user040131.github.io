@@ -1,11 +1,10 @@
-import { AWARDS, CAREER_HIGHLIGHTS, MILESTONES, PROJECTS, type Project } from "@/content/projects";
+import type { Project } from "@/content/projects";
+import { CONTENT, UI, type Lang } from "@/content/ui";
 import { fetchVelogPosts } from "@/lib/velog";
 
 const GITHUB_URL = "https://github.com/user040131";
 const TISTORY_URL = "https://seungjub270.tistory.com/";
 const EMAIL = "seungjub270@gmail.com";
-
-export const revalidate = 3600;
 
 // Team repos: link straight to this author's merged and open PRs so claims can be checked.
 function myPullsUrl(project: Project) {
@@ -18,14 +17,14 @@ function excerpt(html: string) {
 }
 
 // Each skill row links to the projects whose stack lists it (1-based, matches #project-N).
-function SkillLine({ name, detail, projects }: { name: string; detail: string; projects: number[] }) {
+function SkillLine({ name, detail, projects, lang }: { name: string; detail: string; projects: number[]; lang: Lang }) {
   return (
     <div className="skill-line">
       <strong>{name}</strong>
       <span>{detail}</span>
       <p>
         {projects.map((n) => (
-          <a key={n} href={`#project-${n}`}>{PROJECTS[n - 1].name}</a>
+          <a key={n} href={`#project-${n}`}>{CONTENT[lang].PROJECTS[n - 1].name}</a>
         ))}
       </p>
     </div>
@@ -58,7 +57,8 @@ function SectionHeading({
   );
 }
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({ project, index, lang }: { project: Project; index: number; lang: Lang }) {
+  const t = UI[lang];
   return (
     <article className="project-card liquid-glass liquid-glass--frost" id={`project-${index + 1}`}>
       <div className="project-topline">
@@ -79,7 +79,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
       <div className="project-detail-grid">
         <div>
-          <h4>제가 만든 변화</h4>
+          <h4>{t.contributionHeading}</h4>
           <ul>
             {project.contribution.map((item) => (
               <li key={item}>{item}</li>
@@ -87,7 +87,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </ul>
         </div>
         <div>
-          <h4>판단의 기준</h4>
+          <h4>{t.decisionsHeading}</h4>
           <ul>
             {project.decisions.map((item) => (
               <li key={item}>{item}</li>
@@ -97,7 +97,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       </div>
 
       <div className="project-footer">
-        <ul className="tag-list" aria-label={`${project.name} 기술 스택`}>
+        <ul className="tag-list" aria-label={`${project.name} ${t.stackLabel}`}>
           {project.stack.map((tech) => (
             <li key={tech}>{tech}</li>
           ))}
@@ -105,15 +105,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <div className="project-links">
           {project.serviceNote && <span>{project.serviceNote}</span>}
           {project.service && (
-            <a href={project.service} target="_blank" rel="noreferrer" aria-label={`${project.name} 서비스`}>
-              서비스 <ArrowIcon />
+            <a href={project.service} target="_blank" rel="noreferrer" aria-label={`${project.name} ${t.service}`}>
+              {t.service} <ArrowIcon />
             </a>
           )}
-          <a href={myPullsUrl(project)} target="_blank" rel="noreferrer" aria-label={`${project.name} 내 PR`}>
-            내 PR <ArrowIcon />
+          <a href={myPullsUrl(project)} target="_blank" rel="noreferrer" aria-label={`${project.name} ${t.myPrs}`}>
+            {t.myPrs} <ArrowIcon />
           </a>
-          <a href={project.github} target="_blank" rel="noreferrer" aria-label={`${project.name} 저장소`}>
-            저장소 <ArrowIcon />
+          <a href={project.github} target="_blank" rel="noreferrer" aria-label={`${project.name} ${t.repository}`}>
+            {t.repository} <ArrowIcon />
           </a>
         </div>
       </div>
@@ -121,7 +121,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   );
 }
 
-export default async function HomePage() {
+export default async function Home({ lang }: { lang: Lang }) {
+  const t = UI[lang];
+  const { AWARDS, CAREER_HIGHLIGHTS, MILESTONES, PROJECTS } = CONTENT[lang];
   const posts = await fetchVelogPosts(3);
 
   return (
@@ -129,29 +131,29 @@ export default async function HomePage() {
       <section className="hero section-shell" id="top">
         <div className="hero-copy">
           <h1>
-            <span>선택지를 <br className="mobile-break" />설명할 수 있는 개발자,</span>
-            <span><em>선택을 결과로 <br className="mobile-break" />잇는 개발자.</em></span>
+            <span>{t.heroTitle[0][0]}<br className="mobile-break" />{t.heroTitle[0][1]}</span>
+            <span><em>{t.heroTitle[1][0]}<br className="mobile-break" />{t.heroTitle[1][1]}</em></span>
           </h1>
           <p className="hero-description">
-            Spring Boot와 Node.js로 API와 데이터 흐름을 설계하고,
-            <br className="desktop-break" /> Docker·CI/CD·클라우드 환경까지 책임지는 백엔드 개발자 박승주입니다.
+            {t.heroDescription[0]}
+            <br className="desktop-break" />{t.heroDescription[1]}
           </p>
-          <p className="hero-meta">가천대학교 컴퓨터공학과 3학년 재학 · 군 복무 후 졸업 예정</p>
+          <p className="hero-meta">{t.heroMeta}</p>
           <div className="hero-actions">
             <a className="button button-primary" href="#projects">
-              대표 프로젝트 보기 <ArrowIcon down />
+              {t.viewProjects} <ArrowIcon down />
             </a>
             <a className="button button-secondary" href={GITHUB_URL} target="_blank" rel="noreferrer">
-              GitHub 프로필 <ArrowIcon />
+              {t.githubProfile} <ArrowIcon />
             </a>
             <a className="button button-secondary" href={TISTORY_URL} target="_blank" rel="noreferrer">
-              Tistory 블로그 <ArrowIcon />
+              {t.tistoryBlog} <ArrowIcon />
             </a>
           </div>
         </div>
 
         <aside className="hero-summary liquid-glass" aria-labelledby="hero-summary-title">
-          <h2 id="hero-summary-title">대표 프로젝트</h2>
+          <h2 id="hero-summary-title">{t.featuredProjects}</h2>
           <ol>
             {/* The panel highlights the first two projects in PROJECTS (찍먹, 속삭편지); the section below shows all of them. */}
             {PROJECTS.slice(0, 2).map((project, index) => (
@@ -167,7 +169,7 @@ export default async function HomePage() {
         </aside>
       </section>
 
-      <section className="proof-strip" aria-label="수상·자격">
+      <section className="proof-strip" aria-label={t.awardsLabel}>
         <div className="section-shell proof-grid liquid-glass">
           {AWARDS.map((award) => (
             <div key={`${award.title}-${award.organization}`}>
@@ -181,13 +183,13 @@ export default async function HomePage() {
       <section className="projects-section" id="projects">
         <div className="section-shell">
           <SectionHeading
-            label="프로젝트"
-            title="기술 이름보다, 해결한 문제로 설명합니다."
-            description="실제 저장소의 구현과 병합 이력을 바탕으로 정리한 대표 백엔드 프로젝트입니다."
+            label={t.nav.projects}
+            title={t.projectsTitle}
+            description={t.projectsDescription}
           />
           <div className="project-list">
             {PROJECTS.map((project, index) => (
-              <ProjectCard key={project.name} project={project} index={index} />
+              <ProjectCard key={project.name} project={project} index={index} lang={lang} />
             ))}
           </div>
 
@@ -196,25 +198,25 @@ export default async function HomePage() {
 
       <section className="section-shell capability-section" id="skills">
         <SectionHeading
-          label="역량"
-          title="도구는 목적에 맞게, 역량은 근거와 함께."
-          description="프로젝트에서 실제로 사용하고 문제를 해결한 기술을 중심으로 정리했습니다."
+          label={t.nav.skills}
+          title={t.skillsTitle}
+          description={t.skillsDescription}
         />
         <div className="capability-grid">
           <article className="capability-primary liquid-glass liquid-glass--frost">
             <h3>Backend</h3>
-            <SkillLine name="Java · Spring Boot" detail="REST API, JPA, Security, 계층형 아키텍처" projects={[1, 3]} />
-            <SkillLine name="Node.js · Express" detail="Prisma, 미들웨어, 세션·매칭 도메인" projects={[2, 4]} />
+            <SkillLine name="Java · Spring Boot" detail={t.skillDetails[0]} lang={lang} projects={[1, 3]} />
+            <SkillLine name="Node.js · Express" detail={t.skillDetails[1]} lang={lang} projects={[2, 4]} />
           </article>
           <article className="liquid-glass liquid-glass--frost">
             <h3>Database</h3>
-            <SkillLine name="MySQL · PostgreSQL" detail="관계 모델링, 조회·집계, 무결성" projects={[2, 4]} />
-            <SkillLine name="Redis" detail="매칭 풀, 캐시, 운영 설정" projects={[1, 2]} />
+            <SkillLine name="MySQL · PostgreSQL" detail={t.skillDetails[2]} lang={lang} projects={[2, 4]} />
+            <SkillLine name="Redis" detail={t.skillDetails[3]} lang={lang} projects={[1, 2]} />
           </article>
           <article className="liquid-glass liquid-glass--frost">
             <h3>Infrastructure</h3>
-            <SkillLine name="Docker · Actions" detail="실행 환경 표준화, 테스트·배포 자동화" projects={[1, 3]} />
-            <SkillLine name="AWS · OCI" detail="EC2/S3, HTTPS, Nginx/Caddy" projects={[1, 3]} />
+            <SkillLine name="Docker · Actions" detail={t.skillDetails[4]} lang={lang} projects={[1, 3]} />
+            <SkillLine name="AWS · OCI" detail={t.skillDetails[5]} lang={lang} projects={[1, 3]} />
           </article>
         </div>
       </section>
@@ -222,9 +224,9 @@ export default async function HomePage() {
       <section className="journey-section" id="journey">
         <div className="section-shell">
           <SectionHeading
-            label="성장"
-            title="짧게 배우고, 빠르게 만들고, 반드시 회고합니다."
-            description="데이터 기본기에서 시작해 팀 서비스의 API와 운영을 책임지는 개발자로 성장해 왔습니다."
+            label={t.nav.journey}
+            title={t.journeyTitle}
+            description={t.journeyDescription}
           />
           <div className="journey-layout">
             <div className="timeline">
@@ -240,7 +242,7 @@ export default async function HomePage() {
               ))}
             </div>
             <aside className="award-panel liquid-glass" aria-labelledby="award-panel-title">
-              <h3 id="award-panel-title">결과로 남은 성장</h3>
+              <h3 id="award-panel-title">{t.milestonesHeading}</h3>
               <ol>
                 {MILESTONES.map((milestone) => (
                   <li key={milestone.period}>
@@ -261,32 +263,32 @@ export default async function HomePage() {
 
       <section className="section-shell writing-section" id="writing">
           <SectionHeading
-            label="글"
-            title="구현하며 배운 것을 언어로 남깁니다."
-            description="새로 알게 된 원리와 시행착오를 기록하고, 다음 선택의 근거로 사용합니다."
+            label={t.nav.writing}
+            title={t.writingTitle}
+            description={t.writingDescription}
           />
         {posts.length === 0 ? (
           // Feed unavailable at build time: keep a way to reach the blog.
           <a className="text-link" href="https://velog.io/@user040131" target="_blank" rel="noreferrer">
-            Velog에서 글 보기 <ArrowIcon />
+            {t.velogFallback} <ArrowIcon />
           </a>
         ) : (
           <div className="post-grid">
             {posts.map((post) => (
               <a className="liquid-glass liquid-glass--frost" key={post.link} href={post.link} target="_blank" rel="noreferrer">
                 <time dateTime={post.pubDate}>
-                  {new Intl.DateTimeFormat("ko-KR", { year: "numeric", month: "short", day: "numeric" }).format(new Date(post.pubDate))}
+                  {new Intl.DateTimeFormat(t.dateLocale, { year: "numeric", month: "short", day: "numeric" }).format(new Date(post.pubDate))}
                 </time>
                 <h3>{post.title}</h3>
                 <p className="post-excerpt">{excerpt(post.description)}</p>
                 {post.tags.length > 0 && (
-                  <ul className="post-tags" aria-label="태그">
+                  <ul className="post-tags" aria-label={t.tagsLabel}>
                     {post.tags.slice(0, 3).map((tag) => (
                       <li key={tag}>#{tag}</li>
                     ))}
                   </ul>
                 )}
-                <p>읽으러 가기 <ArrowIcon /></p>
+                <p>{t.readPost} <ArrowIcon /></p>
               </a>
             ))}
           </div>
@@ -296,13 +298,13 @@ export default async function HomePage() {
       <section className="contact-section" id="contact">
         <div className="section-shell contact-inner liquid-glass">
           <h2>
-            함께 만들 서비스의
-            <br /> 든든한 백엔드가 되겠습니다.
+            {t.contactTitle[0]}
+            <br />{t.contactTitle[1]}
           </h2>
-          <p>코드와 선택의 이유를 더 자세히 이야기하고 싶습니다.</p>
+          <p>{t.contactDescription}</p>
           <div className="hero-actions">
-            <a className="button button-primary" href={`mailto:${EMAIL}`}>이메일 보내기 <ArrowIcon /></a>
-            <a className="button button-secondary" href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub 프로필 <ArrowIcon /></a>
+            <a className="button button-primary" href={`mailto:${EMAIL}`}>{t.emailCta} <ArrowIcon /></a>
+            <a className="button button-secondary" href={GITHUB_URL} target="_blank" rel="noreferrer">{t.githubProfile} <ArrowIcon /></a>
           </div>
           <a className="contact-email" href={`mailto:${EMAIL}`}>{EMAIL}</a>
         </div>
