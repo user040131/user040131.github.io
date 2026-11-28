@@ -82,11 +82,14 @@ body {
   overflow-x: clip;
 }
 /* Fixed layer instead of background-attachment: fixed, which mobile Safari renders badly. */
-body::before, body::after { content: ""; position: fixed; inset: 0; z-index: -1; background: var(--bg-image) center / cover no-repeat; opacity: var(--bg-image-opacity); pointer-events: none; }
+body::before, body::after { content: ""; position: fixed; inset: 0; z-index: -2; background: var(--bg-image) center / cover no-repeat; opacity: var(--bg-image-opacity); pointer-events: none; }
 /* Second layer for the cross-fade. BackgroundSwap.tsx loads the next image into whichever layer is hidden, then flips data-bg. */
 body::after { background-image: var(--bg-image-b, none); opacity: 0; }
 body[data-bg="b"]::before { opacity: 0; }
 body[data-bg="b"]::after { opacity: var(--bg-image-opacity); }
+/* Easter egg (components/DawnEgg.tsx): above the background layers (-2), under all content, and it never takes a click. */
+.dawn-egg { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; user-select: none; color: var(--ink-muted); font: var(--type-caption); white-space: nowrap; will-change: transform; }
+.dawn-egg strong { display: block; color: var(--ink); font: var(--type-title); font-variant-numeric: tabular-nums; }
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
 ::selection { background: var(--ink); color: var(--surface); }
