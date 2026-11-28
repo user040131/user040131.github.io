@@ -3,8 +3,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const APPEAR_AFTER = 1000; // ms after the page loads
-const VISIBLE_FOR = 10000; // ms on screen
-const SPEED = 110; // px per second, constant
+const VISIBLE_FOR = 30000; // ms on screen, fades included
+const SPEED = 77; // px per second, constant
 const STORAGE_KEY = "dawn-egg-day";
 
 // 01:00 to 05:59 in the visitor's local time.
@@ -26,7 +26,7 @@ if (process.env.NODE_ENV !== "production") {
 
 /**
  * Easter egg. Between 01:00 and 05:59 local time, once per day, a small note drifts across the screen
- * for ten seconds: the time it appeared, and a line of text. It sits under the page content and never takes a click.
+ * for thirty seconds, fading in and out: the time it appeared, and a line of text. It sits under the page content and never takes a click.
  */
 export default function DawnEgg({ message }: { message: string }) {
   const [shownAt, setShownAt] = useState<string | null>(null);
@@ -88,7 +88,8 @@ export default function DawnEgg({ message }: { message: string }) {
 
   if (!shownAt) return null;
   return (
-    <div className="dawn-egg" ref={note} aria-hidden="true">
+    // The fade is one CSS animation as long as the note's life (globals.css), so it ends exactly when the note is removed.
+    <div className="dawn-egg" ref={note} aria-hidden="true" style={{ animationDuration: `${VISIBLE_FOR}ms` }}>
       <strong>{shownAt}</strong>
       {message}
     </div>

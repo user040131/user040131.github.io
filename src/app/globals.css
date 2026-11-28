@@ -327,7 +327,10 @@ p, li { text-wrap: pretty; }
   .skill-line a { min-width: 44px; min-height: 44px; padding: 0; display: inline-flex; align-items: center; }
 }
 
+/* One animation over the note's whole life; DawnEgg.tsx sets the duration. 5% of 30s is a 1.5s fade at each end. */
+@keyframes dawn-egg-life { 0%, 100% { opacity: 0; } 5%, 95% { opacity: 1; } }
 @media (prefers-reduced-motion: no-preference) {
+  .dawn-egg { animation: dawn-egg-life linear both; }
   body::before, body::after { transition: opacity 1s ease; }
   .button, .site-header nav a, .header-contact, .lang-toggle, .post-grid a { transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
   .button:active, .site-header nav a:active, .header-contact:active, .lang-toggle:active { transform: scale(0.97); }
