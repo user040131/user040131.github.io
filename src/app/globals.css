@@ -135,15 +135,19 @@ p, li { text-wrap: pretty; }
 .liquid-glass--frost { background: var(--glass-frost); }
 /* Scroll edge: content fades into bg before it passes under the bar. */
 .header-edge { position: fixed; inset: 0 0 auto; z-index: 40; height: 104px; pointer-events: none; background: linear-gradient(to bottom, color-mix(in srgb, var(--bg) 70%, transparent) 15%, transparent); }
+/* The bar and the language toggle sit side by side inside the page width: the bar is narrower by the toggle and the gap. */
+.site-header { position: fixed; top: var(--space-4); inset-inline: 0; z-index: 50; width: min(var(--max), calc(100% - var(--space-4) * 2)); margin-inline: auto; display: flex; gap: var(--space-2); }
 /* Page text scrolls under the bar, so it blurs harder than a panel. */
-.site-header.liquid-glass { --glass-blur: 4px; position: fixed; top: var(--space-4); left: 50%; z-index: 50; width: min(var(--max), calc(100% - var(--space-4) * 2)); transform: translateX(-50%); }
-.header-inner { padding: 6px; display: flex; align-items: center; gap: 2px; }
+.site-header .liquid-glass { --glass-blur: 4px; }
+.header-inner { flex: 1; min-width: 0; padding: 6px; display: flex; align-items: center; gap: 2px; }
+/* As tall as the bar (56px), so it reads as a second piece of the same glass. */
+.lang-toggle { flex: none; width: 56px; display: grid; place-items: center; font: var(--type-label-strong); }
 .site-header nav { min-width: 0; display: flex; gap: 2px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
 /* 44px tall and at least 44px wide: a one-character label ("글") is still a full touch target. */
 .site-header nav a, .header-contact { flex: none; min-width: 44px; padding: 12px 14px; border-radius: var(--radius-md); font: var(--type-label); text-align: center; }
 .header-contact { margin-left: auto; font-weight: 600; }
 /* Hover styles are gated on (hover: hover) throughout: on touch they would stay stuck after a tap. */
-@media (hover: hover) { .site-header nav a:hover, .header-contact:hover { background: var(--glass-select); } }
+@media (hover: hover) { .site-header nav a:hover, .header-contact:hover, .lang-toggle:hover { background: var(--glass-select); } }
 /* Inset ring: the nav is a scroll container and would clip a ring drawn outside the link. */
 .site-header nav a:focus-visible, .header-contact:focus-visible { outline-offset: -2px; }
 
@@ -293,7 +297,9 @@ p, li { text-wrap: pretty; }
 @media (max-width: 600px) {
   .section-shell { width: calc(100% - var(--space-4) * 2); }
   .header-contact { display: none; }
-  .site-header nav a { padding-inline: 10px; }
+  /* Sized so the five Korean links fit beside the toggle on a 360px screen; longer labels scroll. */
+  .site-header nav a { padding-inline: 8px; }
+  .lang-toggle { width: 48px; }
   .hero h1 { font: var(--type-display-compact); }
   .mobile-break { display: block; }
   .desktop-break { display: none; }
@@ -315,8 +321,8 @@ p, li { text-wrap: pretty; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .button, .site-header nav a, .header-contact, .post-grid a { transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
-  .button:active, .site-header nav a:active, .header-contact:active { transform: scale(0.97); }
+  .button, .site-header nav a, .header-contact, .lang-toggle, .post-grid a { transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
+  .button:active, .site-header nav a:active, .header-contact:active, .lang-toggle:active { transform: scale(0.97); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

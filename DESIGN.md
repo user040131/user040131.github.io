@@ -239,6 +239,7 @@ components:
 - 화면 위에 떠 있는 유리 막대. 본문이 아래로 지나가므로 이 표면만 4px 블러를 가진다.
 - 링크는 Label 타이포, 10px 14px 여백, 12px 모서리. 호버에서 옅은 선택 배경이 깔린다.
 - 600px 이하에서는 이메일 버튼이 숨고, 메뉴는 가로로 스크롤된다.
+- 막대 오른쪽에 8px 간격을 두고 같은 높이의 한/영 전환 유리 버튼(56px, 600px 이하 48px)이 있다. 한국어는 `/`, 영어는 `/en/`이며 버튼은 바뀔 언어로 표기한다(EN / 한).
 
 ### Liquid Glass (signature)
 - 요소마다 크기에 맞는 변위 맵을 구워 `backdrop-filter`로 건다(`src/app/components/LiquidGlass.tsx`).
