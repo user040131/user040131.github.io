@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <!-- Teal glows, diagonal hatch, stacked arcs. Same recipe as background.svg: keep the line art crisp for the glass to bend, only the color glows are blurred. -->
+  <style>
+    .base { fill: #d9d9df; }
+    .glow-a { fill: #0e9f8e; }
+    .glow-b { fill: #5eead4; }
+    .glow-c { fill: #ffffff; }
+    .line { fill: none; stroke: #111111; }
+    .dot { fill: #111111; }
+    @media (prefers-color-scheme: dark) {
+      .base { fill: #15151b; }
+      .glow-a { fill: #0f766e; }
+      .glow-b { fill: #14b8a6; }
+      .glow-c { fill: #134e6b; }
+      .line { stroke: #ffffff; }
+      .dot { fill: #ffffff; }
+    }
+  </style>
+  <defs>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="90" />
+    </filter>
+    <pattern id="tile" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path class="line" d="M0 40L40 0" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect class="base" width="1600" height="1000" />
+  <g filter="url(#soft)">
+    <ellipse class="glow-c" cx="260" cy="180" rx="380" ry="280" />
+    <ellipse class="glow-a" cx="1280" cy="240" rx="380" ry="320" />
+    <ellipse class="glow-b" cx="700" cy="640" rx="420" ry="240" />
+    <ellipse class="glow-c" cx="1420" cy="880" rx="340" ry="240" />
+    <ellipse class="glow-a" cx="180" cy="880" rx="360" ry="250" />
+  </g>
+  <rect width="1600" height="1000" fill="url(#tile)" opacity="0.45" />
+  <g class="line" stroke-width="1.5" opacity="0.6">
+    <path d="M-40 760C300 600 620 900 960 740S1500 560 1660 700" />
+    <path d="M-40 840C300 680 620 980 960 820S1500 640 1660 780" />
+    <path d="M-40 920C300 760 620 1060 960 900S1500 720 1660 860" />
+    <circle cx="1300" cy="230" r="150" />
+    <circle cx="1300" cy="230" r="230" />
+  </g>
+</svg>
