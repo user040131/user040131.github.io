@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
+import BackgroundSwap from "@/app/components/BackgroundSwap";
 import LiquidGlass from "@/app/components/LiquidGlass";
 import { HOME, UI, type Lang } from "@/content/ui";
 import "@/app/globals.css";
@@ -53,6 +54,7 @@ export default function SiteLayout({ lang, children }: Readonly<{ lang: Lang; ch
       </head>
       <body>
         <LiquidGlass />
+        <BackgroundSwap />
         <a className="skip-link" href="#main-content">{t.skipLink}</a>
         <div className="header-edge" aria-hidden="true" />
         <header className="site-header">
